@@ -1,0 +1,44 @@
+.about-me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 20px;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+.about-content {
+  max-width: 600px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.about-me p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.about-image img {
+  border-radius: 50%;
+  max-width: 250px;
+  height: auto;
+  border: 4px solid #007bff;
+}
+
+@media (min-width: 768px) {
+  .about-me {
+    flex-direction: row;
+    justify-content: center;
+    text-align: left;
+  }
+  .about-content {
+    text-align: left;
+    max-width: 50%;
+  }
+}

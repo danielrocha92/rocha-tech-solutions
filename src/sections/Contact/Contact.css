@@ -1,0 +1,40 @@
+.contact {
+  padding: 80px 20px;
+  background-color: #0d0d0d;
+  color: #e0e0e0;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact p {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.contact-link {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #2a2a2a;
+  color: #007bff;
+  border: 2px solid #007bff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-link:hover {
+  background-color: #007bff;
+  color: white;
+}
