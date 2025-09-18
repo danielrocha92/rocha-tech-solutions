@@ -16,6 +16,7 @@ import './components/Footer/Footer.css';
 function App() {
   return (
     <div className="App">
+      <Header />
       <Hero />
       <About />
       <Services />
