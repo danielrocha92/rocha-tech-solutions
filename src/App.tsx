@@ -1,9 +1,11 @@
 import React from 'react';
 import './App.css';
-import Hero from './sections/Hero/Hero'; // Importa o componente Hero
-import './sections/Hero/Hero.css'; // Importa os estilos do componente Hero
-import About from './sections/About/About'; // Importa o componente About
-import './sections/About/About.css'; // Importa os estilos do componente About
+import Header from './components/Header/Header'; // <-- Nova linha
+import './components/Header/Header.css'; // <-- Nova linha
+import Hero from './sections/Hero/Hero'; 
+import './sections/Hero/Hero.css'; 
+import About from './sections/About/About'; 
+import './sections/About/About.css'; 
 import Services from './sections/Services/Services';
 import './sections/Services/Services.css';
 import Portfolio from './sections/Portfolio/Portfolio';
