@@ -2,6 +2,8 @@ import React from "react";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { IconType } from "react-icons";
 import "./Contact.css";
+import { AiOutlineMail } from 'react-icons/ai';
+
 
 // Corrige tipagem para o TS não reclamar
 const MailIcon: IconType = FaEnvelope;
