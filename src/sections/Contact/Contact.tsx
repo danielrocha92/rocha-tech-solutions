@@ -1,12 +1,8 @@
-// Altere esta linha
-import { AiFillMail } from 'react-icons/ai'; 
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope as fasEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 import "./Contact.css";
-
-// Remova as constantes para FaEnvelope
-// const MailIcon: IconType = FaEnvelope;
-// const LinkedinIcon: IconType = FaLinkedin;
-// const GithubIcon: IconType = FaGithub;
 
 const Contact = () => {
   return (
@@ -41,8 +37,7 @@ const Contact = () => {
 
         <div className="social-links">
           <a href="mailto:danielfrocha86@gmail.com" className="contact-link">
-            {/* Altere o nome do componente aqui */}
-            <AiFillMail className="social-icon" /> E-mail
+            <FontAwesomeIcon icon={fasEnvelope} className="social-icon" /> E-mail
           </a>
           <a
             href="https://www.linkedin.com/in/danielrocha92"
@@ -50,7 +45,7 @@ const Contact = () => {
             rel="noopener noreferrer"
             className="contact-link"
           >
-            <FaLinkedin className="social-icon" /> LinkedIn
+            <FontAwesomeIcon icon={faLinkedinIn} className="social-icon" /> LinkedIn
           </a>
           <a
             href="https://github.com/danielrocha92"
@@ -58,7 +53,7 @@ const Contact = () => {
             rel="noopener noreferrer"
             className="contact-link"
           >
-            <FaGithub className="social-icon" /> GitHub
+            <FontAwesomeIcon icon={faGithub} className="social-icon" /> GitHub
           </a>
         </div>
       </div>

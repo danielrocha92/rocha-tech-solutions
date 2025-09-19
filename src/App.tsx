@@ -14,6 +14,8 @@ import Contact from './sections/Contact/Contact';
 import './sections/Contact/Contact.css';
 import Footer from './components/Footer/Footer';
 import './components/Footer/Footer.css';
+import ScrollButtons from './components/ScrollButtons/ScrollButtons';
+import './components/ScrollButtons/ScrollButtons.css';
 
 function App() {
   return (
@@ -24,6 +26,7 @@ function App() {
       <Services />
       <Portfolio />
       <Contact />
+      <ScrollButtons />
       <Footer />
     </div>
   );
