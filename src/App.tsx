@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header/Header'; // <-- Nova linha
-import './components/Header/Header.css'; // <-- Nova linha
-import Hero from './sections/Hero/Hero'; 
-import './sections/Hero/Hero.css'; 
-import About from './sections/About/About'; 
-import './sections/About/About.css'; 
+import Header from './components/Header/Header';
+import './components/Header/Header.css';
+import Hero from './sections/Hero/Hero';
+import './sections/Hero/Hero.css';
+import About from './sections/About/About';
+import './sections/About/About.css';
 import Services from './sections/Services/Services';
 import './sections/Services/Services.css';
 import Portfolio from './sections/Portfolio/Portfolio';

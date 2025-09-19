@@ -1,0 +1,164 @@
+/* Estilos Mobile First */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(18, 18, 18, 0.8);
+  backdrop-filter: blur(10px);
+  color: white;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.5rem; /* Padding horizontal reduzido */
+}
+
+.logo-img {
+  height: 70px; /* Tamanho da logo aumentado no mobile */
+  transition: transform 0.3s ease;
+}
+
+/* Estilo do botão de menu (hambúrguer) */
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  position: relative;
+  z-index: 1001;
+}
+
+.hamburger-icon {
+  width: 25px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.hamburger-icon span {
+  display: block;
+  height: 2px;
+  background-color: white;
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Posição das linhas */
+.hamburger-icon span:first-child {
+  top: 0;
+}
+
+.hamburger-icon span:last-child {
+  bottom: 0;
+}
+
+/* Animação para o 'X' */
+.hamburger-icon.open span:first-child {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger-icon.open span:last-child {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.nav-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #1a1a1a;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: none;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.nav-menu.open {
+  display: block;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  margin: 1rem 0;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+.cta-link {
+  background-color: #007bff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+    border-radius: 16px;
+}
+
+.cta-link:hover {
+  background-color: #0056b3;
+  color: white;
+    border-radius: 16px;
+}
+
+/* Estilos para telas maiores (a partir de 768px) */
+@media (min-width: 768px) {
+  .logo-img {
+    height: 100px; /* Tamanho da logo aumentado no desktop */
+  }
+
+  .header-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    grid-column: 1 / 2;
+    align-self: center;
+  }
+
+  .nav-menu {
+    grid-column: 2 / 3;
+    position: static;
+    display: block;
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  .nav-list {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-item {
+    margin: 0 1.5rem;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+}
