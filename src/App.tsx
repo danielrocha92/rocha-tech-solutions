@@ -18,8 +18,8 @@ import './components/Footer/Footer.css';
 function App() {
   return (
     <div className="App">
-      <Header />
       <Hero />
+      <Header />
       <About />
       <Services />
       <Portfolio />
