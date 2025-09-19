@@ -2,9 +2,7 @@
   import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
   import { IconType } from "react-icons";
   import "./Contact.css";
-  import { AiOutlineMail } from 'react-icons/ai';
-  
-  
+
   // Corrige tipagem para o TS não reclamar
   const MailIcon: IconType = FaEnvelope;
   const LinkedinIcon: IconType = FaLinkedin;
@@ -43,7 +41,7 @@
   
           <div className="social-links">
             <a href="mailto:danielfrocha86@gmail.com" className="contact-link">
-              <MailIcon className="social-icon" /> E-mail
+              <FaEnvelope className="social-icon" /> E-mail
             </a>
             <a
               href="https://www.linkedin.com/in/danielrocha92"
