@@ -8,7 +8,7 @@ const Hero = () => {
         <h2 className="hero-subtitle">Desenvolvedor Web especializado em criar sites modernos, rápidos e responsivos.</h2>
         <div className="hero-cta">
           <a href="./Portfolio" className="cta-button primary">Ver Portfólio</a>
-          <a href="/contato" className="cta-button secondary">Entre em Contato</a>
+          <a href="/Contato" className="cta-button secondary">Entre em Contato</a>
         </div>
       </div>
     </section>
