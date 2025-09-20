@@ -1,34 +1,24 @@
-import React from 'react';
-import './App.css';
-import Header from './components/Header/Header';
-import './components/Header/Header.css';
-import Hero from './sections/Hero/Hero';
-import './sections/Hero/Hero.css';
-import About from './sections/About/About';
-import './sections/About/About.css';
-import Services from './sections/Services/Services';
-import './sections/Services/Services.css';
-import Portfolio from './sections/Portfolio/Portfolio';
-import './sections/Portfolio/Portfolio.css';
-import Contact from './sections/Contact/Contact';
-import './sections/Contact/Contact.css';
-import Footer from './components/Footer/Footer';
-import './components/Footer/Footer.css';
-import ScrollButtons from './components/ScrollButtons/ScrollButtons';
-import './components/ScrollButtons/ScrollButtons.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import About from "./sections/About/About";
+import Services from "./sections/Services/Services";
+import Portfolio from "./sections/Portfolio/Portfolio";
+import Contact from "./sections/Contact/Contact";
+import Hero from "./sections/Hero/Hero";
 
 function App() {
   return (
-    <div className="App">
-      <Hero />
+    <Router>
       <Header />
-      <About />
-      <Services />
-      <Portfolio />
-      <Contact />
-      <ScrollButtons />
-      <Footer />
-    </div>
+      <Routes>
+        <Route path="/" element={<Hero />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </Router>
   );
 }
 
