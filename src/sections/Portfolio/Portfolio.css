@@ -1,3 +1,6 @@
+/* ======================== */
+/* Seção Portfólio - Mobile First */
+/* ======================== */
 .portfolio {
   padding: 80px 20px;
   background-color: #1a1a1a;
@@ -10,7 +13,7 @@
   text-align: center;
 }
 
-.section-title {
+.portfolio .section-title {
   font-size: 2.5rem;
   margin-bottom: 50px;
   color: #ffffff;
@@ -24,7 +27,7 @@
 
 .portfolio-card {
   background-color: #2a2a2a;
-  border-radius: 8px;
+  border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
@@ -36,8 +39,9 @@
 
 .project-image {
   width: 100%;
-  height: 250px;
   object-fit: cover;
+  height: 200px;
+  margin-bottom: 15px;
 }
 
 .project-info {
@@ -63,13 +67,20 @@
   background-color: #007bff;
   color: white;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 16px;
   font-weight: 600;
   transition: background-color 0.3s ease;
-    border-radius: 16px;
 }
 
 .project-link:hover {
   background-color: #0056b3;
-    border-radius: 16px;
+}
+
+/* ======================== */
+/* Ajustes para Desktop */
+/* ======================== */
+@media (min-width: 768px) {
+  .portfolio .section-title {
+    font-size: 3rem; /* Aumenta o tamanho do título para desktop */
+  }
 }

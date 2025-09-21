@@ -1,24 +1,26 @@
+// src/App.tsx
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import About from "./sections/About/About";
-import Services from "./sections/Services/Services";
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import HomePage from "./pages/HomePage";
 import Portfolio from "./sections/Portfolio/Portfolio";
-import Contact from "./sections/Contact/Contact";
-import Hero from "./sections/Hero/Hero";
+import ProjectDetail from "./pages/ProjectDetail/ProjectDetail";
+import './App.css';
 
 function App() {
   return (
-    <Router>
+    <>
       <Header />
-      <Routes>
-        <Route path="/" element={<Hero />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </Router>
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/portfolio/:id" element={<ProjectDetail />} />
+        </Routes>
+      </main>
+      <Footer />
+    </>
   );
 }
 

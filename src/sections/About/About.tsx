@@ -1,8 +1,9 @@
 import React from 'react';
+import "./About.css";
 
 const About = () => {
   return (
-    <section className="about-me">
+    <section  className="about-me" id="about">
       <div className="about-content">
         <h2 className="section-title">Sobre Mim</h2>
         <p>Sou desenvolvedor web apaixonado por transformar ideias em experiências digitais funcionais e atraentes. Trabalho com foco em performance, design responsivo e as melhores práticas do mercado, utilizando tecnologias como React, Node.js e Firebase. Meu objetivo é entregar soluções que gerem valor real para negócios e pessoas.</p>

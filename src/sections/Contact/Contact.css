@@ -1,104 +1,122 @@
+/* ======================== */
+/* Seção Contato - Mobile First */
+/* ======================== */
 .contact {
-    background-color: #1a1a1a;
-    color: white;
-    padding: 4rem 2rem;
-    text-align: center;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
 }
 
 .contact-container {
-    max-width: 800px;
-    margin: 0 auto;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.section-title {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+.contact .section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .contact-container p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
 }
 
 .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  text-align: left;
 }
 
 .form-group {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-group label {
-    margin-bottom: 0.5rem;
-    font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 
 .form-group input,
 .form-group textarea {
-    padding: 0.8rem;
-    border: 1px solid #333;
-    border-radius: 5px;
-    background-color: #2a2a2a;
-    color: white;
-    border-radius: 16px;
+  padding: 0.8rem;
+  border: 1px solid #333;
+  border-radius: 16px;
+  background-color: #2a2a2a;
+  color: white;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 .cta {
-    align-self: center;
-    padding: 1rem 2rem;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    border: none;
-    cursor: pointer;
-    border-radius: 16px;
+  align-self: center;
+  padding: 1rem 2rem;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
 }
 
 .cta:hover {
-    background-color: #0056b3;
-    border-radius: 16px;
+  background-color: #0056b3;
 }
 
 .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 .contact-link {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .contact-link:hover {
-    color: #007bff;
-}
-
-.contact-link {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: #007bff;
 }
 
 .social-icon {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
+}
+
+/* ======================== */
+/* Ajustes para Desktop */
+/* ======================== */
+@media (min-width: 768px) {
+  .contact-form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .form-group {
+    flex-basis: calc(50% - 0.5rem); /* Ocupa 50% do espaço, com um pequeno gap */
+  }
+
+  /* Faz o campo de mensagem ocupar a largura total no desktop */
+  .form-group.message {
+    flex-basis: 100%;
+  }
+
+  .cta {
+    align-self: flex-start; /* Alinha o botão à esquerda no desktop */
+  }
 }

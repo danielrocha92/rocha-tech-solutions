@@ -1,0 +1,102 @@
+/* ======================== */
+/* Página de Detalhes - Mobile First */
+/* ======================== */
+.project-detail {
+  padding: 2rem 1rem;
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+.project-detail-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.project-detail h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #007bff;
+}
+
+.project-detail h2 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid #333;
+  padding-bottom: 0.25rem;
+}
+
+.project-detail p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.project-links a {
+  display: inline-block;
+  margin-right: 1rem;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.project-links a:hover {
+  color: #0056b3;
+}
+
+.project-detail ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.project-detail ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* ======================== */
+/* Carrossel e Galeria */
+/* ======================== */
+.carousel-wrapper {
+  margin-bottom: 2rem;
+}
+
+.carousel-wrapper .carousel .slide img {
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Esconde as legendas padrões do carrossel */
+.carousel-wrapper .carousel .slide .legend {
+  display: none;
+}
+
+
+/* ======================== */
+/* Estilos para Desktop */
+/* ======================== */
+@media (min-width: 768px) {
+  .project-detail {
+    padding: 4rem 2rem;
+  }
+
+  .project-detail h1 {
+    font-size: 3.5rem;
+  }
+
+  .project-detail h2 {
+    font-size: 2rem;
+  }
+}
+
+/* ======================== */
+/* Ajustes de Carrossel para Desktop */
+/* ======================== */
+@media (min-width: 768px) {
+  .carousel-wrapper .carousel .slide img {
+    max-height: 500px;
+  }
+}

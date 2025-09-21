@@ -1,3 +1,6 @@
+/* ======================== */
+/* Seção Serviços - Mobile First */
+/* ======================== */
 .services {
   padding: 80px 20px;
   background-color: #0d0d0d;
@@ -9,7 +12,7 @@
   margin: 0 auto;
 }
 
-.section-title {
+.services .section-title {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 50px;
@@ -50,4 +53,17 @@
 .service-card p {
   font-size: 1rem;
   line-height: 1.5;
+}
+
+/* ======================== */
+/* Ajustes para Desktop */
+/* ======================== */
+@media (min-width: 768px) {
+  .services .section-title {
+    font-size: 3rem; /* Aumenta a fonte do título para desktop */
+  }
+
+  .service-card h3 {
+    font-size: 1.5rem; /* Aumenta a fonte do título do card */
+  }
 }

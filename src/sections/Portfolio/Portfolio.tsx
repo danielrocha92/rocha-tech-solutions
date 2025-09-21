@@ -1,8 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+import "./Portfolio.css";
 
 const Portfolio = () => {
   return (
-    <section className="portfolio">
+    <section id="portfolio" className="portfolio">
       <div className="portfolio-container">
         <h2 className="section-title">Meus Projetos</h2>
         <div className="portfolio-grid">
@@ -12,7 +15,7 @@ const Portfolio = () => {
             <div className="project-info">
               <h3>Zero 20 Garage</h3>
               <p>Descrição curta do projeto e tecnologias usadas (ex: React, Node.js).</p>
-              <a href="https://zero20garage.vercel.app/" target="_blank" rel="noopener noreferrer" className="project-link">Ver Projeto</a>
+              <Link to="/portfolio/zero-vinte" className="project-link">Ver Projeto</Link>
             </div>
           </div>
 
@@ -22,7 +25,7 @@ const Portfolio = () => {
             <div className="project-info">
               <h3>Bem Amados</h3>
               <p>Descrição curta do projeto e tecnologias usadas (ex: Angular, Firebase).</p>
-              <a href="https://www.bemamados.com.br/" target="_blank" rel="noopener noreferrer" className="project-link">Ver Projeto</a>
+              <Link to="/portfolio/bem-amados" className="project-link">Ver Projeto</Link>
             </div>
           </div>
         </div>

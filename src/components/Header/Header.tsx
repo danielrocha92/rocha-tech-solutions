@@ -2,62 +2,38 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
-const Header: React.FC = () => {
+const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleMenuToggle = () => {
+  const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-  const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <header className="header">
       <div className="header-container">
-        <Link to="/" className="logo" onClick={closeMenu}>
-          <img
-            src="/assets/img/logo.png"
-            alt="Rocha Tech Solutions Logo"
-            className="logo-img"
-          />
+        <Link to="/" className="logo">
+          <img src="/assets/img/logo.png" alt="Logo Rocha Tech Solutions" className="logo-img" />
         </Link>
-
-        <button
-          className="menu-toggle"
-          onClick={handleMenuToggle}
-          aria-label="Toggle menu"
-        >
-          <div className={`hamburger-icon ${isMenuOpen ? "open" : ""}`}>
-            <span></span>
-            <span></span>
-          </div>
+        <button className="menu-toggle" onClick={toggleMenu} aria-label="Abrir menu">
+          <span className={`hamburger-icon ${isMenuOpen ? "open" : ""}`}></span>
         </button>
-
-        <nav className={`nav-menu ${isMenuOpen ? "open" : ""}`}>
-          <ul className="nav-list">
+        <nav className={`nav ${isMenuOpen ? "open" : ""}`}>
+          <ul className="nav-list" onClick={() => setIsMenuOpen(false)}>
             <li className="nav-item">
-              <Link to="/about" className="nav-link" onClick={closeMenu}>
-                Sobre Mim
-              </Link>
+              <Link to="/#hero">Início</Link>
             </li>
             <li className="nav-item">
-              <Link to="/services" className="nav-link" onClick={closeMenu}>
-                Serviços
-              </Link>
+              <Link to="/#about">Sobre</Link>
             </li>
             <li className="nav-item">
-              <Link to="/portfolio" className="nav-link" onClick={closeMenu}>
-                Portfólio
-              </Link>
+              <Link to="/#services">Serviços</Link>
             </li>
             <li className="nav-item">
-              <Link
-                to="/contact"
-                className="nav-link cta-link"
-                onClick={closeMenu}
-              >
-                Contato
-              </Link>
+              <Link to="/portfolio">Portfólio</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/#contact">Contato</Link>
             </li>
           </ul>
         </nav>
