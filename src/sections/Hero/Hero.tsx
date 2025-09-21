@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section id="hero" className="hero-section">
       <video className="hero-video" autoPlay loop muted playsInline>
-        <source src="/assets/videos/banner.mp4" type="video/mp4" />
+        <source src="/assets/img/videos/banner.mp4" type="video/mp4" />
         Seu navegador não suporta o elemento de vídeo.
       </video>
       <div className="hero-content">
