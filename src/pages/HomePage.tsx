@@ -14,6 +14,7 @@ function HomePage() {
       <Hero />
       <About />
       <Services />
+      <HowItWorks />
       <Portfolio />
       <Contact />
     </>
