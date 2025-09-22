@@ -67,7 +67,7 @@
   width: 100%;
   height: 100%;
   /* Aumenta a opacidade para mobile (mais claro) */
-  background-color: rgba(0, 0, 0, 0.1); /* Valor menor para mais claridade */
+  background-color: rgba(0, 0, 0, 0.5); /* Valor menor para mais claridade */
   z-index: -1;
 }
 
