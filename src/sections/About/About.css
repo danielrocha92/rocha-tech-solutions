@@ -52,6 +52,17 @@
 
   .about-me .section-title {
     font-size: 3rem;
+    margin-bottom: 30px;
+    text-align: left;
+    color: #ffffff;
+    margin-right: 40px;
+    flex: 1;
+    align-self: center;
+
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    
   }
 
   .about-me p {
