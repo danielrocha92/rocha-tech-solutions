@@ -1,10 +1,10 @@
 import React from 'react';
-import Hero from '../Hero/Hero';
-import About from '../About/About';
-import Services from '../Services/Services';
-import HowItWorks from '../HowItWorks/HowItWorks';
-import Portfolio from '../Portfolio/Portfolio';
-import Contact from '../Contact/Contact';
+import Hero from '../sections/Hero/Hero';
+import About from '../sections/About/About';
+import Services from '../sections/Services/Services';
+import HowItWorks from '../sections/HowItWorks/HowItWorks';
+import Portfolio from '../sections/Portfolio/Portfolio';
+import Contact from '../sections/Contact/Contact';
 
 const HomePage = () => {
   return (
