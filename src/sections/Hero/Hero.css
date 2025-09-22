@@ -56,6 +56,7 @@
   width: auto;
   height: auto;
   z-index: -1;
+  /* Adiciona esta regra para que o vídeo se ajuste */
   object-fit: cover;
 }
 
