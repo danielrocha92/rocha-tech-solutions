@@ -35,23 +35,19 @@
 /* Estilos para desktop (a partir de 768px) */
 @media (min-width: 768px) {
   .scroll-buttons-container {
-    /* No desktop: sobe ao topo à direita, WhatsApp à esquerda */
-    left: 20px; /* WhatsApp à esquerda */
-    right: auto; /* Desativa o right */
-    flex-direction: row; /* Alinha lado a lado no desktop */
-    align-items: flex-end; /* Alinha os botões na parte inferior */
+    /* No desktop: o container do WhatsApp fica à esquerda */
+    left: 20px;
+    right: auto;
+    flex-direction: column; /* Mantém a coluna para o WhatsApp */
+    align-items: flex-start;
   }
 
   .scroll-to-top {
-    position: absolute;
-    right: 20px; /* Alinha o botão de subir ao topo à direita */
-    left: auto; /* Desativa o left */
-    bottom: 0; /* Alinha com o botão do WhatsApp */
-  }
-
-  .whatsapp-button {
-    /* Já está à esquerda por padrão no container */
-    position: static; /* Volta a ser estático para o flexbox do container */
+    /* O botão de subir ao topo agora tem seu próprio posicionamento no desktop */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    left: auto;
   }
 }
 

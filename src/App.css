@@ -1,3 +1,4 @@
+/* src/App.css */
 /* ======================== */
 /* CSS Reset - Mobile First */
 /* ======================== */
@@ -19,10 +20,11 @@ html, body {
   --primary-color: #007bff;
   --secondary-color: #6c757d;
   --background-color: #1a1a1a;
-  --text-color: #343a40;
-  --link-color: #0056b3;
+  --text-color: #f0f0f0;
+  --link-color: #007bff;
 
-  --font-family-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  /* Fontes */
+  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --font-family-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 }
 
@@ -35,7 +37,7 @@ body {
   color: var(--text-color);
   line-height: 1.6;
 
-  /* Layout Flexbox */
+  /* Layout Flexbox para o rodapé fixo */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -44,10 +46,13 @@ body {
 a {
   color: var(--link-color);
   text-decoration: none;
+  transition: all 0.3s ease-in-out;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  /* Efeito neon no hover */
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.8), 0 0 30px rgba(0, 123, 255, 0.6), 0 0 45px rgba(0, 123, 255, 0.4);
 }
 
 /* Classe de container para centralizar o conteúdo */
@@ -70,10 +75,81 @@ section {
 }
 
 /* ======================== */
+/* Estilos para o rodapé fixo */
+/* ======================== */
+.footer {
+  padding: 20px;
+  background-color: #1a1a1a;
+  color: #b0b0b0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ======================== */
+/* Estilos de Botões Globais com Efeito Neon */
+/* ======================== */
+.cta-button, .project-link, .cta {
+  /* Estilo base para todos os botões */
+  padding: 12px 24px;
+  border-radius: 16px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 1rem;
+  font-family: var(--font-family-sans);
+  margin: 5px;
+  min-width: 150px;
+  box-sizing: border-box;
+  background-clip: padding-box; /* Garante que o fundo não ultrapasse a borda */
+  /* Evita que o botão fique muito pequeno em telas menores */
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  user-select: none; /* Evita seleção de texto ao clicar */
+  font-weight: bold;
+}
+
+.cta-button.primary, .project-link, .cta {
+  /* Estilo de fundo e cor para botões primários */
+  background-color: #007bff;
+  color: white;
+  /* Brilho neon inicial */
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.8), 0 0 20px rgba(0, 123, 255, 0.6);
+}
+
+.cta-button.secondary {
+  /* Estilo para o botão secundário (transparente com borda) */
+  background-color: transparent;
+  color: #007bff;
+  border: 2px solid #007bff;
+  /* Brilho neon inicial */
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.8), 0 0 20px rgba(0, 123, 255, 0.6);
+}
+
+/* Efeito de Brilho Neon ao passar o mouse */
+.cta-button:hover, .project-link:hover, .cta:hover {
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.8), 0 0 30px rgba(0, 123, 255, 0.6), 0 0 45px rgba(0, 123, 255, 0.4);
+}
+
+/* ======================== */
 /* Media Queries (Desktop) */
 /* ======================== */
 @media (min-width: 768px) {
   body {
     font-size: 18px;
+  }
+}
+
+/* ======================== */
+/* Media Queries (Mobile) */
+/* ======================== */
+@media (max-width: 767px) {
+  .hero-cta {
+    flex-direction: column;
   }
 }

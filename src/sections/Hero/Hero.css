@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #121212;
+  background-color: #121212bd;
   color: #f0f0f0;
   text-align: center;
   padding: 20px;
@@ -16,7 +16,7 @@
 
 .hero-content {
   max-width: 800px;
-  padding: 0 20px; /* Adiciona padding para evitar que o conteúdo encoste nas bordas em telas pequenas */
+  padding: 0 20px;
   position: relative;
   z-index: 1;
 }
@@ -33,41 +33,14 @@
   color: #b0b0b0;
 }
 
+/* Os botões ficam em coluna no mobile */
 .hero-cta {
   margin-top: 2rem;
   display: flex;
-  justify-content: center;
-  gap: 20px; /* Usa gap para espaçamento entre os botões */
-  flex-wrap: wrap; /* Permite que os botões quebrem a linha em telas pequenas */
-}
-
-.cta-button {
-  display: inline-block;
-  padding: 12px 24px;
-  border-radius: 16px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-.primary {
-  background-color: #007bff;
-  color: white;
-}
-
-.primary:hover {
-  background-color: #0056b3;
-}
-
-.secondary {
-  background-color: transparent;
-  color: #007bff;
-  border: 2px solid #007bff;
-}
-
-.secondary:hover {
-  background-color: #007bff;
-  color: white;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: nowrap;
 }
 
 /* ======================== */
@@ -93,7 +66,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Escurece o vídeo para o texto ficar mais visível */
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: -1;
 }
 
@@ -109,7 +82,10 @@
     font-size: 2rem;
   }
 
-  .cta-button {
-    padding: 14px 28px;
+  /* Faz os botões ficarem lado a lado no desktop */
+  .hero-cta {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 }

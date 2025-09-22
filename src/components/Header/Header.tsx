@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-container">
-        <Link to="/" className="logo">
+        <Link to="/#hero" className="logo">
           <img src="/assets/img/logo.png" alt="Logo Rocha Tech Solutions" className="logo-img" />
         </Link>
         <button className="menu-toggle" onClick={toggleMenu} aria-label="Abrir menu">

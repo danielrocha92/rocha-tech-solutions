@@ -4,6 +4,7 @@ import About from '../sections/About/About';
 import Services from '../sections/Services/Services';
 import Contact from '../sections/Contact/Contact';
 import useScrollToHash from '../hooks/useScrollToHash';
+import Portfolio from '../sections/Portfolio/Portfolio';
 
 function HomePage() {
   useScrollToHash(80);
@@ -13,6 +14,7 @@ function HomePage() {
       <Hero />
       <About />
       <Services />
+      <Portfolio />
       <Contact />
     </>
   );

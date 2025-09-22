@@ -102,21 +102,21 @@
 /* ======================== */
 @media (min-width: 768px) {
   .contact-form {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+
   }
 
-  .form-group {
-    flex-basis: calc(50% - 0.5rem); /* Ocupa 50% do espaço, com um pequeno gap */
-  }
-
-  /* Faz o campo de mensagem ocupar a largura total no desktop */
-  .form-group.message {
-    flex-basis: 100%;
-  }
-
+  /* Garante que o campo de mensagem e o botão ocupem a largura total */
+  .form-group.message,
   .cta {
-    align-self: flex-start; /* Alinha o botão à esquerda no desktop */
+    grid-column: 1 / -1;
+  }
+
+  /* Alinha o botão à esquerda no desktop */
+  .cta {
+    justify-self: start;
+    align-self: flex-end;
   }
 }
