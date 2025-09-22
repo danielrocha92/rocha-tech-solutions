@@ -17,7 +17,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 1rem;
+  /* Reduzido o padding para o mobile */
+  padding: 0.3rem 0.8rem;
 }
 
 .logo-img {
@@ -91,7 +92,7 @@
   padding-top: 100px;
   transform: translateY(-100%);
     transition: transform 0.6s cubic-bezier(0.86, 0, 0.07, 1),
-              opacity 0.4s ease; /* Animação de deslizar e de transparência */
+               opacity 0.4s ease; /* Animação de deslizar e de transparência */
   z-index: 999;
 }
 
@@ -129,7 +130,8 @@
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
-    padding: 1rem 2rem;
+    /* Reduzido o padding para o desktop */
+    padding: 0.2rem 0.5rem;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -149,7 +151,7 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
   .nav-item a {

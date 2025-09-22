@@ -5,8 +5,8 @@ import './Hero.css';
 const Hero = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
   const videoSources = [
-    "/assets/videos/banner.mp4",
-    "/assets/videos/Hailuo_Video__código abstrato_, _redes de d_426362228513443843.mp4"
+    "/assets/videos/Hailuo_Video__código abstrato_, _redes de d_426362228513443843.mp4",
+    "/assets/videos/banner.mp4"
   ];
 
   const handleVideoEnded = () => {

@@ -5,10 +5,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  /* Aumentado o padding para garantir que o conteúdo fique visível */
+  padding-top: 90px;
+  /* Mantém a altura mínima de 100% da tela */
+  min-height: 100vh;
   color: #f0f0f0;
   text-align: center;
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   position: relative;
   overflow: hidden;
 }
@@ -93,5 +97,10 @@
   /* Deixa a sobreposição mais escura no desktop */
   .hero-section::after {
     background-color: rgba(0, 0, 0, 0.5); /* Valor maior para menos claridade */
+  }
+
+  .hero-section {
+    /* Ajuste para a nova altura do header no desktop */
+    padding-top: 70px;
   }
 }
