@@ -1,158 +1,332 @@
-/* src/App.css */
 /* ======================== */
-/* CSS Reset - Mobile First */
+/* Variáveis e Configurações Globais */
 /* ======================== */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #0056b3;
+  --background-color: #121212;
+  --card-background-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --heading-color: #ffffff;
+}
+
+/* Base styles */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html, body {
-  width: 100%;
-  height: 100%;
+html {
+  scroll-behavior: smooth;
 }
 
-/* ======================== */
-/* Variáveis Globais */
-/* ======================== */
-:root {
-  --primary-color: #007bff;
-  --secondary-color: #6c757d;
-  --background-color: #1a1a1a;
-  --text-color: #f0f0f0;
-  --link-color: #007bff;
-
-  /* Fontes */
-  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-family-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-}
-
-/* ======================== */
-/* Estilos Base e Layout Flexbox */
-/* ======================== */
 body {
-  font-family: var(--font-family-sans);
+  font-family: 'Inter', sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
-
-  /* Layout Flexbox para o rodapé fixo */
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
-a {
-  color: var(--link-color);
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
+.app-container {
+  overflow-x: hidden;
 }
 
-a:hover {
-  text-decoration: none;
-  /* Efeito neon no hover */
-  box-shadow: 0 0 15px rgba(0, 123, 255, 0.8), 0 0 30px rgba(0, 123, 255, 0.6), 0 0 45px rgba(0, 123, 255, 0.4);
-}
-
-/* Classe de container para centralizar o conteúdo */
-.container {
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-
-/* Estilos para o conteúdo principal */
-main {
-  flex-grow: 1;
+.main-content {
+  /* Adiciona um padding para compensar a altura do header fixo */
   padding-top: 80px;
 }
 
-/* Estilos para seções */
-section {
-  padding: 80px 16px;
+/* ======================== */
+/* Seção Contato */
+/* ======================== */
+.contact {
+  background-color: var(--card-background-color);
+  color: var(--text-color);
+  padding: 4rem 2rem;
+  text-align: center;
 }
 
-/* ======================== */
-/* Estilos para o rodapé fixo */
-/* ======================== */
-.footer {
-  padding: 20px;
-  background-color: #1a1a1a;
-  color: #b0b0b0;
-  text-align: center;
-  font-size: 0.9rem;
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-/* ======================== */
-/* Estilos de Botões Globais com Efeito Neon */
-/* ======================== */
-.cta-button, .project-link, .cta {
-  /* Estilo base para todos os botões */
-  padding: 12px 24px;
-  border-radius: 16px;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  font-size: 1rem;
-  font-family: var(--font-family-sans);
-  margin: 5px;
-  min-width: 150px;
-  box-sizing: border-box;
-  background-clip: padding-box; /* Garante que o fundo não ultrapasse a borda */
-  /* Evita que o botão fique muito pequeno em telas menores */
-  width: 100%;
-  max-width: 200px;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
+.contact .section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--heading-color);
+}
+
+.contact-container p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-form {
   display: flex;
-  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
-  user-select: none; /* Evita seleção de texto ao clicar */
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
   font-weight: bold;
 }
 
-.cta-button.primary, .project-link, .cta {
-  /* Estilo de fundo e cor para botões primários */
-  background-color: #007bff;
+.form-group input,
+.form-group textarea {
+  padding: 0.8rem;
+  border: 1px solid #333;
+  border-radius: 16px;
+  background-color: #2a2a2a;
   color: white;
-  /* Brilho neon inicial */
-  box-shadow: 0 0 10px rgba(0, 123, 255, 0.8), 0 0 20px rgba(0, 123, 255, 0.6);
 }
 
-.cta-button.secondary {
-  /* Estilo para o botão secundário (transparente com borda) */
-  background-color: transparent;
-  color: #007bff;
-  border: 2px solid #007bff;
-  /* Brilho neon inicial */
-  box-shadow: 0 0 10px rgba(0, 123, 255, 0.8), 0 0 20px rgba(0, 123, 255, 0.6);
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-/* Efeito de Brilho Neon ao passar o mouse */
-.cta-button:hover, .project-link:hover, .cta:hover {
-  box-shadow: 0 0 15px rgba(0, 123, 255, 0.8), 0 0 30px rgba(0, 123, 255, 0.6), 0 0 45px rgba(0, 123, 255, 0.4);
-  transform: translateY(-2px);
+.cta {
+  align-self: center;
+  padding: 1rem 2rem;
+  background-color: var(--primary-color);
+  color: white;
   text-decoration: none;
   border-radius: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
 }
 
-/* ======================== */
-/* Media Queries (Desktop) */
-/* ======================== */
+.cta:hover {
+  background-color: var(--secondary-color);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: var(--primary-color);
+}
+
 @media (min-width: 768px) {
-  body {
-    font-size: 18px;
+  .contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-group.full-width {
+    grid-column: 1 / -1;
   }
 }
 
 /* ======================== */
-/* Media Queries (Mobile) */
+/* Seção Footer */
+/* ======================== */
+.footer {
+  background-color: #000000;
+  color: #e0e0e0;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.footer p {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+/* ======================== */
+/* Seção "Como Funciona" */
+/* ======================== */
+.how-it-works {
+  padding: 80px 20px;
+  background-color: #0d0d0d;
+  color: #e0e0e0;
+  text-align: center;
+}
+
+.how-it-works-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.how-it-works .section-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.how-it-works .subtitle {
+  font-size: 1rem;
+  margin-bottom: 50px;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Timeline */
+.timeline-wrapper {
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background-color: #333;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  left: 0;
+  text-align: right;
+  padding-right: 30px;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  left: 50%;
+  text-align: left;
+  padding-left: 30px;
+}
+
+.timeline-item:nth-child(even) .timeline-content .step-number {
+  left: 0;
+  transform: translateX(-50%);
+}
+
+.timeline-item:nth-child(odd) .timeline-content .step-number {
+  right: 0;
+  transform: translateX(50%);
+}
+
+.timeline-content {
+  position: relative;
+  width: 50%;
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.step-number {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  box-shadow: 0 0 15px #007bff;
+}
+
+.timeline-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.timeline-content p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* ======================== */
+/* Ajustes para Desktop */
 /* ======================== */
 @media (max-width: 767px) {
-  .hero-cta {
-    flex-direction: column;
+  .how-it-works .subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 30px;
   }
+  .timeline::before {
+    left: 25px;
+  }
+
+  .timeline-item {
+    margin-bottom: 30px;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-content,
+  .timeline-item:nth-child(even) .timeline-content {
+    left: 50px;
+    width: auto;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-content .step-number,
+  .timeline-item:nth-child(even) .timeline-content .step-number {
+    left: 0;
+    transform: translateX(-50%);
+    top: 15px;
+  }
+
 }
+/* ======================== */
+/* Componentes Compartilhados */
+/* ======================== */
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: var(--heading-color);
+}
+
