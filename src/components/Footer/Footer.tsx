@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <p>&copy; {new Date().getFullYear()} Daniel Rocha. Todos os direitos reservados.</p>
+        <p>&copy; {new Date().getFullYear()} Rocha Tech Solutions. Todos os direitos reservados.</p>
       </div>
     </footer>
   );

@@ -134,6 +134,9 @@ section {
 /* Efeito de Brilho Neon ao passar o mouse */
 .cta-button:hover, .project-link:hover, .cta:hover {
   box-shadow: 0 0 15px rgba(0, 123, 255, 0.8), 0 0 30px rgba(0, 123, 255, 0.6), 0 0 45px rgba(0, 123, 255, 0.4);
+  transform: translateY(-2px);
+  text-decoration: none;
+  border-radius: 16px;
 }
 
 /* ======================== */
