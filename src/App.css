@@ -112,6 +112,7 @@ body {
 
 .cta:hover {
   background-color: var(--secondary-color);
+  border-radius: 8px;
 }
 
 .social-links {
