@@ -5,7 +5,7 @@ import './Hero.css';
 const Hero = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
   const videoSources = [
-    "/assets/videos/Hailuo_Video__código abstrato_, _redes de d_426362228513443843.mp4",
+    "/assets/videos/https://g.co/gemini/share/ff678e685e22.mp4",
     "/assets/videos/banner.mp4"
   ];
 
