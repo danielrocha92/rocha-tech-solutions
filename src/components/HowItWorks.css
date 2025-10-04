@@ -1,27 +1,132 @@
-/* ======================================= */
-/* Efeito Vidro e Tamanho Ajustado         */
-/* ======================================= */
+/* ================================================= */
+/* Seção "Como Funciona" - Código Completo           */
+/* Abordagem: Mobile First                           */
+/* ================================================= */
 
-/* O círculo com o número do passo (AGORA COM EFEITO VIDRO) */
+.how-it-works {
+  padding: 60px 20px;
+  background-color: #0d0d0d;
+  color: #e0e0e0;
+  text-align: center;
+  overflow: hidden; /* Evita barras de rolagem laterais */
+}
+
+.how-it-works-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.how-it-works .section-title {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.how-it-works .subtitle {
+  font-size: 1rem;
+  margin-bottom: 50px;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ======================== */
+/* Estrutura da Timeline    */
+/* ======================== */
+.timeline {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* A linha vertical central */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #333;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* ======================================= */
+/* Cards de Conteúdo com Efeito Vidro      */
+/* ======================================= */
+.timeline-content {
+  position: relative;
+  width: calc(50% - 25px); /* Espaçamento para a linha central */
+  
+  /* Efeito Vidro */
+  background-color: rgba(255, 255, 255, 0.05); 
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Ítens ÍMPARES (alinhados à esquerda) */
+.timeline-item:nth-child(odd) {
+  display: flex;
+  justify-content: flex-start;
+}
+.timeline-item:nth-child(odd) .timeline-content {
+  text-align: right;
+}
+
+/* Ítens PARES (alinhados à direita) */
+.timeline-item:nth-child(even) {
+  display: flex;
+  justify-content: flex-end;
+}
+.timeline-item:nth-child(even) .timeline-content {
+  text-align: left;
+}
+
+
+/* ================================================ */
+/* Círculo do Número com Efeito Vidro (Ajustado)    */
+/* ================================================ */
 .step-number {
   position: absolute;
   top: 50%;
   z-index: 1;
   transform: translateY(-50%);
   
-  /* --- AJUSTES DE TAMANHO --- */
-  width: 36px;  /* Tamanho reduzido para mobile */
+  /* Tamanho Reduzido para Mobile */
+  width: 36px;
   height: 36px;
-  font-size: 1.1rem; /* Fonte interna reduzida */
+  font-size: 1.1rem;
 
-  /* --- EFEITO VIDRO (GLASSMORPHISM) --- */
-  background-color: rgba(255, 255, 255, 0.1); /* Fundo semitransparente */
-  backdrop-filter: blur(8px); /* O desfoque do fundo, a mágica do efeito */
-  -webkit-backdrop-filter: blur(8px); /* Suporte para Safari */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil para definir a forma */
+  /* Efeito Vidro */
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   
-  color: #ffffff; /* Cor do número */
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Sombra leve no texto para legibilidade */
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -29,35 +134,69 @@
   font-weight: bold;
 }
 
-/* Posiciona o círculo na linha central para itens ímpares */
+/* Posicionamento do círculo (Ímpar) */
 .timeline-item:nth-child(odd) .step-number {
-  right: -18px; /* Metade do novo tamanho (36px / 2) */
+  right: -18px; /* Metade da largura */
   transform: translateX(50%);
 }
 
-/* Posiciona o círculo na linha central para itens pares */
+/* Posicionamento do círculo (Par) */
 .timeline-item:nth-child(even) .step-number {
-  left: -18px; /* Metade do novo tamanho (36px / 2) */
+  left: -18px; /* Metade da largura */
   transform: translateX(-50%);
 }
 
-/* ================================================= */
-/* Ajustes para Desktop (Dentro da sua Media Query)  */
-/* ================================================= */
+/* Textos dentro do Card */
+.timeline-content h3 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.timeline-content p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+
+/* ================================================ */
+/* Ajustes para Desktop (Telas Maiores >= 768px)    */
+/* ================================================ */
 @media (min-width: 768px) {
-  /* Cole estas regras dentro da sua media query @media (min-width: 768px) */
+  .how-it-works {
+    padding: 80px 20px;
+  }
+
+  .how-it-works .section-title {
+    font-size: 2.5rem;
+  }
+
+  .timeline-content {
+    width: calc(50% - 40px); /* Aumenta o espaçamento central */
+    padding: 20px;
+  }
 
   .step-number {
-    width: 44px;  /* Tamanho um pouco maior para desktop */
+    width: 44px; /* Aumenta o tamanho do círculo */
     height: 44px;
     font-size: 1.3rem;
   }
 
   .timeline-item:nth-child(odd) .step-number {
-    right: -22px; /* Metade do novo tamanho (44px / 2) */
+    right: -22px; /* Metade da nova largura */
   }
 
   .timeline-item:nth-child(even) .step-number {
-    left: -22px; /* Metade do novo tamanho (44px / 2) */
+    left: -22px; /* Metade da nova largura */
+  }
+
+  .timeline-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.9rem;
   }
 }
