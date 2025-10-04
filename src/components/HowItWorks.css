@@ -1,182 +1,63 @@
 /* ======================================= */
-/* Seção "Como Funciona" - Mobile First    */
+/* Efeito Vidro e Tamanho Ajustado         */
 /* ======================================= */
-.how-it-works {
-  padding: 60px 20px; /* Padding reduzido para mobile */
-  background-color: #0d0d0d;
-  color: #e0e0e0;
-  text-align: center;
-  overflow: hidden; /* Evita barras de rolagem indesejadas */
-}
 
-.how-it-works-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.how-it-works .section-title {
-  font-size: 2.2rem; /* Fonte ligeiramente menor para mobile */
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.how-it-works .subtitle {
-  font-size: 1rem;
-  margin-bottom: 50px;
-  line-height: 1.6;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ======================== */
-/* Timeline - Mobile        */
-/* ======================== */
-.timeline {
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-}
-
-/* A linha central da timeline */
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background-color: #333;
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 40px;
-  width: 100%;
-}
-
-/* Remove a margem do último item */
-.timeline-item:last-child {
-  margin-bottom: 0;
-}
-
-.timeline-content {
-  position: relative;
-  /* Calcula a largura para deixar um espaço no centro */
-  width: calc(50% - 25px);
-  background-color: #1a1a1a;
-  padding: 15px; /* Padding menor para mobile */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.timeline-content:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-}
-
-/* Ítens ÍMPARES (esquerda) */
-.timeline-item:nth-child(odd) {
-  display: flex;
-  justify-content: flex-start; /* Alinha o conteúdo à esquerda */
-}
-.timeline-item:nth-child(odd) .timeline-content {
-  text-align: right;
-}
-
-/* Ítens PARES (direita) */
-.timeline-item:nth-child(even) {
-  display: flex;
-  justify-content: flex-end; /* Alinha o conteúdo à direita */
-}
-.timeline-item:nth-child(even) .timeline-content {
-  text-align: left;
-}
-
-/* O círculo com o número do passo */
+/* O círculo com o número do passo (AGORA COM EFEITO VIDRO) */
 .step-number {
   position: absolute;
   top: 50%;
   z-index: 1;
   transform: translateY(-50%);
-  width: 40px; /* Tamanho menor para mobile */
-  height: 40px;
+  
+  /* --- AJUSTES DE TAMANHO --- */
+  width: 36px;  /* Tamanho reduzido para mobile */
+  height: 36px;
+  font-size: 1.1rem; /* Fonte interna reduzida */
+
+  /* --- EFEITO VIDRO (GLASSMORPHISM) --- */
+  background-color: rgba(255, 255, 255, 0.1); /* Fundo semitransparente */
+  backdrop-filter: blur(8px); /* O desfoque do fundo, a mágica do efeito */
+  -webkit-backdrop-filter: blur(8px); /* Suporte para Safari */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil para definir a forma */
+  
+  color: #ffffff; /* Cor do número */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Sombra leve no texto para legibilidade */
   border-radius: 50%;
-  background-color: #007bff;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 1.2rem; /* Fonte menor para o número */
-  border: 3px solid #0d0d0d;
 }
 
 /* Posiciona o círculo na linha central para itens ímpares */
 .timeline-item:nth-child(odd) .step-number {
-  right: -20px; /* Metade do tamanho do círculo */
+  right: -18px; /* Metade do novo tamanho (36px / 2) */
   transform: translateX(50%);
 }
 
 /* Posiciona o círculo na linha central para itens pares */
 .timeline-item:nth-child(even) .step-number {
-  left: -20px; /* Metade do tamanho do círculo */
+  left: -18px; /* Metade do novo tamanho (36px / 2) */
   transform: translateX(-50%);
 }
 
-.timeline-content h3 {
-  font-size: 1.1rem; /* Fonte menor para mobile */
-  margin-top: 0;
-  margin-bottom: 10px;
-  color: #ffffff;
-}
-
-.timeline-content p {
-  font-size: 0.85rem; /* Fonte menor para mobile */
-  line-height: 1.5;
-  margin-bottom: 0;
-}
-
-
-/* ======================================= */
-/* Ajustes para Desktop (Telas maiores)    */
-/* ======================================= */
+/* ================================================= */
+/* Ajustes para Desktop (Dentro da sua Media Query)  */
+/* ================================================= */
 @media (min-width: 768px) {
-  .how-it-works {
-    padding: 80px 20px;
-  }
-
-  .how-it-works .section-title {
-    font-size: 2.5rem;
-  }
-
-  .timeline-content {
-    /* Deixa um espaço maior no centro em telas grandes */
-    width: calc(50% - 40px);
-    padding: 20px;
-  }
+  /* Cole estas regras dentro da sua media query @media (min-width: 768px) */
 
   .step-number {
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
+    width: 44px;  /* Tamanho um pouco maior para desktop */
+    height: 44px;
+    font-size: 1.3rem;
   }
 
   .timeline-item:nth-child(odd) .step-number {
-    right: -25px; /* Metade do novo tamanho do círculo */
+    right: -22px; /* Metade do novo tamanho (44px / 2) */
   }
 
   .timeline-item:nth-child(even) .step-number {
-    left: -25px; /* Metade do novo tamanho do círculo */
-  }
-
-  .timeline-content h3 {
-    font-size: 1.25rem;
-  }
-
-  .timeline-content p {
-    font-size: 0.9rem;
+    left: -22px; /* Metade do novo tamanho (44px / 2) */
   }
 }
