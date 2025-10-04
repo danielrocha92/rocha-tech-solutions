@@ -2,6 +2,7 @@ import React from 'react';
 
 const HowItWorks = () => {
   const steps = [
+    // Seus 'steps' continuam aqui, sem alterações...
     {
       title: 'Solicite um Orçamento',
       description: 'Nesta etapa, nosso time vai avaliar seu pedido inicial e, logo em seguida, marcar uma reunião para esclarecer melhor tudo que você precisa.',
@@ -32,6 +33,14 @@ const HowItWorks = () => {
     },
   ];
 
+  // Estilo de teste para o efeito de vidro
+  const glassEffectStyle = {
+    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+    backdropFilter: 'blur(5px)',
+    WebkitBackdropFilter: 'blur(5px)', // Para compatibilidade com Safari
+    border: '1px solid rgba(255, 255, 255, 0.1)',
+  };
+
   return (
     <section className="how-it-works">
       <div className="how-it-works-container">
@@ -44,7 +53,11 @@ const HowItWorks = () => {
           <div className="timeline">
             {steps.map((step, index) => (
               <div key={index} className="timeline-item">
-                <div className="timeline-content">
+                {/* O ESTILO DE TESTE FOI APLICADO AQUI */}
+                <div 
+                  className="timeline-content" 
+                  style={glassEffectStyle}
+                >
                   <div className="step-number">{index + 1}</div>
                   <h3>{step.title}</h3>
                   <p>{step.description}</p>
@@ -59,4 +72,3 @@ const HowItWorks = () => {
 };
 
 export default HowItWorks;
-
