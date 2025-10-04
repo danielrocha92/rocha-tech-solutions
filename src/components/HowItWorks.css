@@ -1,14 +1,14 @@
-/* ================================================= */
-/* Seção "Como Funciona" - Código Completo           */
-/* Abordagem: Mobile First                           */
-/* ================================================= */
+/* ======================================= */
+/* Seção "Como Funciona" - Layout Único    */
+/* ======================================= */
 
 .how-it-works {
-  padding: 60px 20px;
+  /* Usamos padding horizontal para garantir espaço nas bordas em telas pequenas */
+  padding: 80px 20px;
   background-color: #0d0d0d;
   color: #e0e0e0;
   text-align: center;
-  overflow: hidden; /* Evita barras de rolagem laterais */
+  overflow-x: hidden; /* Previne scroll horizontal acidental */
 }
 
 .how-it-works-container {
@@ -26,9 +26,6 @@
   font-size: 1rem;
   margin-bottom: 50px;
   line-height: 1.6;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /* ======================== */
@@ -54,21 +51,44 @@
 
 .timeline-item {
   position: relative;
+  width: 100%; /* Ocupa a largura total para posicionar o conteúdo dentro */
   margin-bottom: 40px;
-  width: 100%;
+  display: flex; /* Usamos flexbox para o alinhamento */
+  box-sizing: border-box; /* Garante que padding não afete o cálculo */
 }
 
 .timeline-item:last-child {
   margin-bottom: 0;
 }
 
+/* --- O Truque para o Layout --- */
+/* Itens ÍMPARES: conteúdo à esquerda */
+.timeline-item:nth-child(odd) {
+  justify-content: flex-start; /* Alinha o card à esquerda */
+}
+.timeline-item:nth-child(odd) .timeline-content {
+  text-align: right;
+}
+
+
+/* Itens PARES: conteúdo à direita */
+.timeline-item:nth-child(even) {
+  justify-content: flex-end; /* Alinha o card à direita */
+}
+.timeline-item:nth-child(even) .timeline-content {
+  text-align: left;
+}
+
+
 /* ======================================= */
 /* Cards de Conteúdo com Efeito Vidro      */
 /* ======================================= */
 .timeline-content {
   position: relative;
-  width: calc(50% - 25px); /* Espaçamento para a linha central */
-  
+  /* Ocupa quase metade da tela, com espaço para a linha */
+  width: calc(50% - 25px); 
+  box-sizing: border-box;
+
   /* Efeito Vidro */
   background-color: rgba(255, 255, 255, 0.05); 
   backdrop-filter: blur(5px);
@@ -86,27 +106,8 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Ítens ÍMPARES (alinhados à esquerda) */
-.timeline-item:nth-child(odd) {
-  display: flex;
-  justify-content: flex-start;
-}
-.timeline-item:nth-child(odd) .timeline-content {
-  text-align: right;
-}
-
-/* Ítens PARES (alinhados à direita) */
-.timeline-item:nth-child(even) {
-  display: flex;
-  justify-content: flex-end;
-}
-.timeline-item:nth-child(even) .timeline-content {
-  text-align: left;
-}
-
-
 /* ================================================ */
-/* Círculo do Número com Efeito Vidro (Ajustado)    */
+/* Círculo do Número com Efeito Vidro               */
 /* ================================================ */
 .step-number {
   position: absolute;
@@ -114,9 +115,8 @@
   z-index: 1;
   transform: translateY(-50%);
   
-  /* Tamanho Reduzido para Mobile */
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   font-size: 1.1rem;
 
   /* Efeito Vidro */
@@ -126,7 +126,6 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   
   color: #ffffff;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -136,13 +135,13 @@
 
 /* Posicionamento do círculo (Ímpar) */
 .timeline-item:nth-child(odd) .step-number {
-  right: -18px; /* Metade da largura */
+  right: -19px; /* Metade da largura */
   transform: translateX(50%);
 }
 
 /* Posicionamento do círculo (Par) */
 .timeline-item:nth-child(even) .step-number {
-  left: -18px; /* Metade da largura */
+  left: -19px; /* Metade da largura */
   transform: translateX(-50%);
 }
 
@@ -158,45 +157,4 @@
   font-size: 0.85rem;
   line-height: 1.5;
   margin-bottom: 0;
-}
-
-
-/* ================================================ */
-/* Ajustes para Desktop (Telas Maiores >= 768px)    */
-/* ================================================ */
-@media (min-width: 768px) {
-  .how-it-works {
-    padding: 80px 20px;
-  }
-
-  .how-it-works .section-title {
-    font-size: 2.5rem;
-  }
-
-  .timeline-content {
-    width: calc(50% - 40px); /* Aumenta o espaçamento central */
-    padding: 20px;
-  }
-
-  .step-number {
-    width: 44px; /* Aumenta o tamanho do círculo */
-    height: 44px;
-    font-size: 1.3rem;
-  }
-
-  .timeline-item:nth-child(odd) .step-number {
-    right: -22px; /* Metade da nova largura */
-  }
-
-  .timeline-item:nth-child(even) .step-number {
-    left: -22px; /* Metade da nova largura */
-  }
-
-  .timeline-content h3 {
-    font-size: 1.25rem;
-  }
-
-  .timeline-content p {
-    font-size: 0.9rem;
-  }
 }
