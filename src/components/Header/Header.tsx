@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+// O Link do react-router-dom pode ser removido se você só tiver links internos
+// import { Link } from "react-router-dom"; 
 import "./Header.css";
 
 const Header = () => {
@@ -9,31 +10,38 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Função para fechar o menu ao clicar em um item
+  const handleNavClick = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="header">
       <div className="header-container">
-        <Link to="/#hero" className="logo">
+        {/* Este link para o logo também deve ser um <a> */}
+        <a href="/#hero" className="logo">
           <img src="/assets/img/logo.png" alt="Logo Rocha Tech Solutions" className="logo-img" />
-        </Link>
+        </a>
         <button className="menu-toggle" onClick={toggleMenu} aria-label="Abrir menu">
           <span className={`hamburger-icon ${isMenuOpen ? "open" : ""}`}></span>
         </button>
         <nav className={`nav ${isMenuOpen ? "open" : ""}`}>
-          <ul className="nav-list" onClick={() => setIsMenuOpen(false)}>
+          {/* Adicionado o onClick aqui para fechar o menu ao clicar em qualquer link */}
+          <ul className="nav-list" onClick={handleNavClick}>
             <li className="nav-item">
-              <Link to="/hero">Início</Link>
+              <a href="#hero">Início</a>
             </li>
             <li className="nav-item">
-              <Link to="/about">Sobre</Link>
+              <a href="#about">Sobre</a>
             </li>
             <li className="nav-item">
-              <Link to="/services">Serviços</Link>
+              <a href="#services">Serviços</a>
             </li>
             <li className="nav-item">
-              <Link to="/portfolio">Portfólio</Link>
+              <Link to="/portfolio">Portfólio</Limk>
             </li>
             <li className="nav-item">
-              <Link to="/contact">Contato</Link>
+              <a href="#contact">Contato</a>
             </li>
           </ul>
         </nav>
