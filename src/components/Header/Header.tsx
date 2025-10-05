@@ -21,19 +21,19 @@ const Header = () => {
         <nav className={`nav ${isMenuOpen ? "open" : ""}`}>
           <ul className="nav-list" onClick={() => setIsMenuOpen(false)}>
             <li className="nav-item">
-              <Link to="/#hero">Início</Link>
+              <Link to="/hero">Início</Link>
             </li>
             <li className="nav-item">
-              <Link to="/#about">Sobre</Link>
+              <Link to="/about">Sobre</Link>
             </li>
             <li className="nav-item">
-              <Link to="/#services">Serviços</Link>
+              <Link to="/services">Serviços</Link>
             </li>
             <li className="nav-item">
               <Link to="/portfolio">Portfólio</Link>
             </li>
             <li className="nav-item">
-              <Link to="/#contact">Contato</Link>
+              <Link to="/contact">Contato</Link>
             </li>
           </ul>
         </nav>
