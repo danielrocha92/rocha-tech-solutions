@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-// O Link do react-router-dom pode ser removido se você só tiver links internos
-// import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom"; // Importamos o Link para a rota do Portfólio
 import "./Header.css";
 
 const Header = () => {
@@ -18,30 +17,34 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-container">
-        {/* Este link para o logo também deve ser um <a> */}
-        <a href="/#hero" className="logo">
+        {/* Este link volta para o topo da página inicial */}
+        <Link to="/" className="logo">
           <img src="/assets/img/logo.png" alt="Logo Rocha Tech Solutions" className="logo-img" />
-        </a>
+        </Link>
         <button className="menu-toggle" onClick={toggleMenu} aria-label="Abrir menu">
           <span className={`hamburger-icon ${isMenuOpen ? "open" : ""}`}></span>
         </button>
         <nav className={`nav ${isMenuOpen ? "open" : ""}`}>
-          {/* Adicionado o onClick aqui para fechar o menu ao clicar em qualquer link */}
           <ul className="nav-list" onClick={handleNavClick}>
+            {/* Links de âncora (mesma página) usam <a> */}
             <li className="nav-item">
-              <a href="#hero">Início</a>
+              <a href="/#hero">Início</a>
             </li>
             <li className="nav-item">
-              <a href="#about">Sobre</a>
+              <a href="/#about">Sobre</a>
             </li>
             <li className="nav-item">
-              <a href="#services">Serviços</a>
+              <a href="/#services">Serviços</a>
             </li>
+
+            {/* Link para outra página/rota usa <Link> */}
             <li className="nav-item">
-              <Link to="/portfolio">Portfólio</Limk>
+              <Link to="/portfolio">Portfólio</Link>
             </li>
+
+            {/* Link de âncora (mesma página) usa <a> */}
             <li className="nav-item">
-              <a href="#contact">Contato</a>
+              <a href="/#contact">Contato</a>
             </li>
           </ul>
         </nav>
