@@ -18,7 +18,7 @@ const Header = () => {
     <header className="header">
       <div className="header-container">
         {/* Este link volta para o topo da página inicial */}
-        <Link to="/#hero" className="logo">
+        <Link to="/#hero" className="logo" aria-label="Página Inicial">
           <img src="/assets/img/logo.png" alt="Logo Rocha Tech Solutions" className="logo-img" />
         </Link>
         <button className="menu-toggle" onClick={toggleMenu} aria-label="Abrir menu">
@@ -35,6 +35,9 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <a href="/#services">Serviços</a>
+            </li>
+            <li className="nav-item">
+              <a href="/#HowItWorks">Como Funciona</a>
             </li>
 
             {/* Link para outra página/rota usa <Link> */}

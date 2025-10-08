@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Importa o CSS do carrossel
@@ -41,6 +41,13 @@ const projects = [
 const ProjectDetail = () => {
   const { id } = useParams();
   const project = projects.find(p => p.id === id);
+
+  useEffect(() => {
+    if (project) {
+      // Define o título da página dinamicamente para SEO
+      document.title = `${project.title} - Projeto de Daniel Rocha`;
+    }
+  }, [project]);
 
   if (!project) {
     return <div>Projeto não encontrado!</div>;

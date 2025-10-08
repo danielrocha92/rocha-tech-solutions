@@ -5,8 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Garante que o conteúdo não fique colado no header */
-  padding-top: 90px;
+  padding-top: 70px; /* Espaço para o header fixo. Ajuste se a altura do header mudar. */
   min-height: 100vh;
   color: #f0f0f0;
   text-align: center;
@@ -26,13 +25,13 @@
 }
 
 .hero-title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
   font-weight: bold;
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: normal;
   color: #b0b0b0;
   margin-bottom: 2rem;
