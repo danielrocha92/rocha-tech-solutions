@@ -6,6 +6,7 @@ import About from '../sections/About/About';
 import Services from '../sections/Services/Services';
 import HowItWorks from '../components/HowItWorks';
 import Portfolio from '../sections/Portfolio/Portfolio';
+import Testimonials from '../sections/Testimonials/Testimonials';
 import Contact from '../sections/Contact/Contact';
 
 const HomePage = () => {
@@ -36,6 +37,7 @@ const HomePage = () => {
         <Services />
         <HowItWorks />
         <Portfolio />
+        <Testimonials />
         <Contact />
       </main>
     </>

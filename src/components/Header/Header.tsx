@@ -45,6 +45,10 @@ const Header = () => {
               <Link to="/portfolio">Portfólio</Link>
             </li>
 
+            <li className="nav-item">
+              <a href="/#testimonials">Avaliações</a>
+            </li>
+
             {/* Link de âncora (mesma página) usa <a> */}
             <li className="nav-item">
               <a href="/#contact">Contato</a>
