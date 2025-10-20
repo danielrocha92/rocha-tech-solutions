@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import ScrollReveal from 'scrollreveal';
 import { Helmet } from 'react-helmet-async';
 import Hero from '../sections/Hero/Hero';
 import About from '../sections/About/About';
@@ -8,6 +9,18 @@ import Portfolio from '../sections/Portfolio/Portfolio';
 import Contact from '../sections/Contact/Contact';
 
 const HomePage = () => {
+  useEffect(() => {
+    const sr = ScrollReveal({
+      origin: 'bottom',
+      distance: '60px',
+      duration: 1000,
+      delay: 200,
+      opacity: 1,
+      // reset: true // Animations repeat
+    });
+    sr.reveal('main > *', { interval: 100 });
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -17,16 +30,16 @@ const HomePage = () => {
           content="Portfólio de Daniel Rocha, desenvolvedor web especializado na criação de sites profissionais, e-commerce e aplicações web modernas em São Paulo."
         />
       </Helmet>
-      <Hero />
-      <About />
-      <Services />
-      <HowItWorks />
-      <Portfolio />
-      <Contact />
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <HowItWorks />
+        <Portfolio />
+        <Contact />
+      </main>
     </>
   );
 };
 
 export default HomePage;
-
-

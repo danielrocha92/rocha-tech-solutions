@@ -44,10 +44,12 @@ const HowItWorks = () => {
   return (
     <section className="how-it-works">
       <div className="how-it-works-container" id="HowItWorks">
-        <h2 className="section-title">Inicie seu projeto agora!</h2>
-        <p className="subtitle">
-          Se tem dúvidas sobre como funciona um projeto de criação de site, fale conosco. Não deixe para depois, use o formulário abaixo para fazer sua solicitação de orçamento!
-        </p>
+        <div className="how-it-works-header">
+          <h2 className="section-title">Inicie seu projeto agora!</h2>
+          <p className="subtitle">
+            Se tem dúvidas sobre como funciona um projeto de criação de site, fale conosco. Não deixe para depois, use o formulário abaixo para fazer sua solicitação de orçamento!
+          </p>
+        </div>
 
         <div className="timeline-wrapper">
           <div className="timeline">

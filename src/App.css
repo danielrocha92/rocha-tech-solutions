@@ -28,10 +28,6 @@ body {
   line-height: 1.6;
 }
 
-.app-container {
-  overflow-x: hidden;
-}
-
 .main-content {
   /* Adiciona um padding para compensar a altura do header fixo */
   padding-top: 40px;
@@ -263,7 +259,7 @@ body {
 
 .step-number {
   position: absolute;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
   width: 30px;
   height: 30px;
@@ -318,7 +314,6 @@ body {
   .timeline-item:nth-child(even) .timeline-content .step-number {
     left: 0;
     transform: translateX(-50%);
-    top: 15px;
   }
 
 }
