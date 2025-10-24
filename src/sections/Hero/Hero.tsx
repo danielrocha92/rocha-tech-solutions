@@ -31,8 +31,8 @@ const Hero = () => {
         Seu navegador não suporta a tag de vídeo.
       </video>
       <div className="hero-content">
-        <h1 className="hero-title">Olá, eu sou Daniel Rocha</h1>
-        <h2 className="hero-subtitle">Desenvolvedor Web especializado em criar sites modernos, rápidos e responsivos.</h2>
+        <h1 className="hero-title">Rocha Tech Solutions</h1>
+        <h2 className="hero-subtitle">Dev Web especialista em criação de sites modernos, rápidos e responsivos.</h2>
         <div className="hero-cta">
           <Link to="/portfolio" className="cta-button primary">Ver Portfólio</Link>
           <Link to="/contact" className="cta-button secondary">Entre em Contato</Link>
