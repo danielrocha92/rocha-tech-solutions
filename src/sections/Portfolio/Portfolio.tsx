@@ -30,7 +30,7 @@ const portfolioProjects: ProjectCard[] = [
     },
     {
         title: 'Bem Amados',
-        description: 'E-commerce e site institucional para a marca Bem Amados (fisioterapia pélvica), otimizado para SEO. (Tecnologias: Liquid.js, HTML, CSS, JSON, JavaScript).',
+        description: 'E-commerce e site institucional para a marca Bem Amados (fisioterapia pélvica), otimizado para SEO. (Tecnologias: Liquid js, HTML, CSS, JSON, JavaScript).',
         linkTo: '/portfolio/bem-amados',
         media: {
             src: '/assets/img/bemamados.jpeg',
@@ -40,7 +40,7 @@ const portfolioProjects: ProjectCard[] = [
     },
     {
         title: 'Renata Ribeiro Neuropsicologia',
-        description: 'Site profissional para neuropsicóloga, focado na apresentação de serviços, captação de pacientes com Dashboard e Área do Cliente para gerenciamento de consultas, compartilhamento de documentos de avaliação. (Tecnologias: React.js, Next js, CSS dedicado).',
+        description: 'Site profissional para neuropsicóloga, focado na apresentação de serviços, captação de pacientes com Dashboard e Área do Cliente para gerenciamento de consultas, compartilhamento de documentos de avaliação. (Tecnologias: React js, Next js, CSS dedicado).',
         linkTo: '/portfolio/renata-ribeiro',
         media: {
             src: '/assets/videos/screemshot_solo_psico.mp4',
