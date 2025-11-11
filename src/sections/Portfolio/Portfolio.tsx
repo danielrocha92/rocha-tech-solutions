@@ -60,17 +60,21 @@ const Portfolio: React.FC = () => {
           {portfolioProjects.map((project, index) => (
               <div key={index} className="portfolio-card">
                   
-                  {/* Aplicação da CORREÇÃO TS2339 AQUI */}
+                  {/* CORREÇÃO TS2322 APLICADA AQUI: 
+                      'alt' foi substituído por 'title' no elemento <video>.
+                  */}
                   {project.media.type?.toLowerCase() === 'video' ? (
                       <video 
                         src={project.media.src} 
-                        alt={project.media.alt} 
+                        title={project.media.alt} // <-- CORRIGIDO
                         className="project-image" 
                         autoPlay 
                         loop 
                         muted 
                         playsInline 
-                      />
+                      >
+                        Seu navegador não suporta este vídeo.
+                      </video>
                   ) : (
                       <img 
                         src={project.media.src} 
