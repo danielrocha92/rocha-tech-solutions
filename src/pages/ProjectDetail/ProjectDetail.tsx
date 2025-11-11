@@ -36,6 +36,22 @@ const projects = [
       { src: "/assets/img/bemamados-3.png", alt: "Captura de tela da página de sugestão de produtos do site Bem Amados." }
     ]
   },
+  {
+    id: "renata-ribeiro",
+    title: "Renata Ribeiro Neuropsicologia",
+    githubLink: "https://github.com/danielrocha92/renata-ribeiro-neuropsico",
+    siteLink: "https://renata-ribeiro-neuropsico.vercel.app/",
+    role: "Desenvolvedor Front-end, Designer",
+    description: "Desenvolvimento de um site profissional para a psicóloga e neuropsicóloga Renata Ribeiro. O objetivo foi criar uma plataforma para apresentar seus serviços, compartilhar informações sobre sua abordagem e facilitar o contato com pacientes.",
+    highlights: "Design limpo e profissional, totalmente responsivo, informações detalhadas sobre os serviços oferecidos, e formulário de contato para agendamentos.",
+    technologies: ["React.js", "CSS", "Vite"],
+    gallery: [
+      { src: "/assets/videos/screemshot_solo_psico.mp4", alt: "Vídeo de demonstração do site Renata Ribeiro.", type: "video" },
+      { src: "/assets/img/renata-ribeiro-1.png", alt: "Captura de tela da página inicial do site Renata Ribeiro." },
+      { src: "/assets/img/renata-ribeiro-2.png", alt: "Captura de tela da página de serviços do site Renata Ribeiro." },
+      { src: "/assets/img/renata-ribeiro-3.png", alt: "Captura de tela da página de contato do site Renata Ribeiro." }
+    ]
+  },
 ];
 
 const ProjectDetail = () => {
@@ -61,9 +77,13 @@ const ProjectDetail = () => {
         {project.gallery && project.gallery.length > 0 && (
           <div className="carousel-wrapper">
             <Carousel showArrows={true} infiniteLoop={true} dynamicHeight={false}>
-              {project.gallery.map((image, index) => (
+              {project.gallery.map((media, index) => (
                 <div key={index}>
-                  <img src={image.src} alt={image.alt} />
+                  {media.type === 'video' ? (
+                    <video src={media.src} alt={media.alt} controls autoPlay muted loop playsInline />
+                  ) : (
+                    <img src={media.src} alt={media.alt} />
+                  )}
                 </div>
               ))}
             </Carousel>

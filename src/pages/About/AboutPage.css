@@ -1,0 +1,71 @@
+/* ======================== */
+/* Seção Sobre - Mobile First */
+/* ======================== */
+.about-me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 20px;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+.about-content {
+  max-width: 600px;
+  text-align: center;
+}
+
+.about-me .section-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.about-me p {
+  /* Aumentando o tamanho da fonte e o espaçamento da linha */
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.about-image img {
+  border-radius: 50%;
+  width: 100%; /* Garante que a imagem ocupe 100% do seu contêiner */
+  max-width: 250px;
+  height: auto;
+  border: 4px solid #007bff;
+}
+
+/* ======================== */
+/* Ajustes para Desktop */
+/* ======================== */
+@media (min-width: 768px) {
+  .about-me {
+    flex-direction: row;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .about-content {
+    text-align: left;
+  }
+
+  .about-me .section-title {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-align: left;
+    color: #ffffff;
+    margin-right: 40px;
+    flex: 1;
+    align-self: center;
+
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    
+  }
+
+  .about-me p {
+    font-size: 1.2rem;
+  }
+}

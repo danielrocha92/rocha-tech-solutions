@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/About/AboutPage"; // Import the new AboutPage component
 import Portfolio from "./sections/Portfolio/Portfolio";
 import ProjectDetail from "./pages/ProjectDetail/ProjectDetail";
 import './App.css';
@@ -18,6 +19,7 @@ function App() {
       <main className="main-content">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} /> {/* Add the new route for the AboutPage */}
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/portfolio/:id" element={<ProjectDetail />} />
         </Routes>

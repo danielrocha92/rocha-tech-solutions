@@ -28,6 +28,24 @@ const Portfolio = () => {
               <Link to="/portfolio/bem-amados" className="project-link">Ver Projeto</Link>
             </div>
           </div>
+
+          {/* Novo Projeto */}
+          <div className="portfolio-card">
+            <video 
+              src="/assets/videos/screemshot_solo_psico.mp4" 
+              alt="Projeto 3" 
+              className="project-image" 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+            />
+            <div className="project-info">
+              <h3>Renata Ribeiro Neuropsicologia</h3>
+              <p>Psicóloga e Neuropsicóloga com atendimento ético, personalizado e humanizado.</p>
+              <Link to="/portfolio/renata-ribeiro" className="project-link">Ver Projeto</Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>
