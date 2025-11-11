@@ -4,8 +4,27 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Importa o CSS do carrossel
 import './ProjectDetail.css';
 
-// Dados completos dos projetos com galeria
-const projects = [
+// 1. Tipagem (Interfaces) para o TypeScript
+interface GalleryItem {
+  src: string;
+  alt: string;
+  type?: 'video' | 'image'; // Torna 'type' opcional.
+}
+
+interface Project {
+  id: string;
+  title: string;
+  githubLink: string | null;
+  siteLink: string | null;
+  role: string;
+  description: string;
+  highlights: string;
+  technologies: string[];
+  gallery: GalleryItem[];
+}
+
+// 2. Dados completos dos projetos com galeria
+const projects: Project[] = [ // Adiciona a tipagem à constante
   {
     id: "zero-vinte",
     title: "Zero 20 Garage",
@@ -54,8 +73,8 @@ const projects = [
   },
 ];
 
-const ProjectDetail = () => {
-  const { id } = useParams();
+const ProjectDetail: React.FC = () => { // Tipagem do componente
+  const { id } = useParams<{ id: string }>(); // Tipagem do useParams
   const project = projects.find(p => p.id === id);
 
   useEffect(() => {
@@ -79,10 +98,24 @@ const ProjectDetail = () => {
             <Carousel showArrows={true} infiniteLoop={true} dynamicHeight={false}>
               {project.gallery.map((media, index) => (
                 <div key={index}>
-                  {media.type === 'video' ? (
-                    <video src={media.src} alt={media.alt} controls autoPlay muted loop playsInline />
+                  {/* CORREÇÃO TS2339 APLICADA: 
+                      media.type? verifica se a propriedade existe de forma segura.
+                      Se não existir (como nos projetos 'zero-vinte' e 'bem-amados'), 
+                      a expressão resulta em 'undefined', é avaliada como 'false', e renderiza <img>.
+                  */}
+                  {media.type?.toLowerCase() === 'video' ? (
+                    <video 
+                      src={media.src} 
+                      alt={media.alt} 
+                      controls 
+                      autoPlay 
+                      muted 
+                      loop 
+                      playsInline 
+                      className="carousel-media" // Adicionando uma classe para facilitar o CSS
+                    />
                   ) : (
-                    <img src={media.src} alt={media.alt} />
+                    <img src={media.src} alt={media.alt} className="carousel-media" />
                   )}
                 </div>
               ))}
@@ -91,7 +124,6 @@ const ProjectDetail = () => {
         )}
 
         <h1>{project.title}</h1>
-        {/* O restante do seu código permanece aqui, sem alterações */}
         <div className="project-links">
           {project.siteLink && (
             <a href={project.siteLink} target="_blank" rel="noopener noreferrer">
