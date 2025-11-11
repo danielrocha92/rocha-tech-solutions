@@ -40,7 +40,7 @@ const portfolioProjects: ProjectCard[] = [
     },
     {
         title: 'Renata Ribeiro Neuropsicologia',
-        description: 'Psicóloga e Neuropsicóloga com atendimento ético, personalizado e humanizado.',
+        description: 'Site profissional para neuropsicóloga, focado na apresentação de serviços, captação de pacientes com Dashboard e Área do Cliente para gerenciamento de consultas, compartilhamento de documentos de avaliação. (Tecnologias: React.js, Next js, CSS dedicado).',
         linkTo: '/portfolio/renata-ribeiro',
         media: {
             src: '/assets/videos/screemshot_solo_psico.mp4',
