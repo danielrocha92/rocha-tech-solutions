@@ -20,7 +20,7 @@ interface ProjectCard {
 const portfolioProjects: ProjectCard[] = [
     {
         title: 'Zero 20 Garage',
-        description: 'Descrição curta do projeto e tecnologias usadas (ex: React, Node.js).',
+        description: 'Site institucional responsivo para a oficina Zero20 Garage, focado na apresentação de serviços e captação de orçamentos. (Tecnologias: React js, Node js, Firebase, Cloudnary, Framer Motion e CSS dedicado).',
         linkTo: '/portfolio/zero-vinte',
         media: {
             src: '/assets/img/zero20garage.jpeg',
@@ -30,7 +30,7 @@ const portfolioProjects: ProjectCard[] = [
     },
     {
         title: 'Bem Amados',
-        description: 'Descrição curta do projeto e tecnologias usadas (ex: Angular, Firebase).',
+        description: 'E-commerce e site institucional para a marca Bem Amados (fisioterapia pélvica), otimizado para SEO. (Tecnologias: Liquid.js, HTML, CSS, JSON, JavaScript).',
         linkTo: '/portfolio/bem-amados',
         media: {
             src: '/assets/img/bemamados.jpeg',
