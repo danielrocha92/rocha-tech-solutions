@@ -1,6 +1,6 @@
 #testimonials {
     padding: 60px 0;
-    background-color: #2a2a2a;
+    background-color: var(--background-secondary);
   }
 
   .container {
@@ -24,10 +24,10 @@
   .testimonial {
     flex: 1 1 300px;
     max-width: 700px;
-    background-color: #1a1a1a;
+    background-color: var(--background-tertiary);
     border-radius: 8px;
     padding: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px var(--shadow-primary);
   }
 
   .testimonial-header {
@@ -58,7 +58,7 @@
   }
 
   .testimonial-rating .stars {
-    color: #f8d000;
+    color: var(--brand-warning);
   }
 
   .testimonial-author-img {

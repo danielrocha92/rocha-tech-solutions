@@ -7,8 +7,8 @@
   align-items: center;
   gap: 40px;
   padding: 80px 20px;
-  background-color: #1a1a1a;
-  color: #e0e0e0;
+  background-color: var(--background-secondary);
+  color: var(--text-primary);
 }
 
 .about-content {
@@ -19,7 +19,7 @@
 .about-me .section-title {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 .about-me p {
@@ -33,7 +33,7 @@
   width: 100%; /* Garante que a imagem ocupe 100% do seu contêiner */
   max-width: 250px;
   height: auto;
-  border: 4px solid #007bff;
+  border: 4px solid var(--brand-primary);
 }
 
 /* ======================== */
@@ -54,7 +54,7 @@
     font-size: 3rem;
     margin-bottom: 30px;
     text-align: left;
-    color: #ffffff;
+    color: var(--text-primary);
     margin-right: 40px;
     flex: 1;
     align-self: center;

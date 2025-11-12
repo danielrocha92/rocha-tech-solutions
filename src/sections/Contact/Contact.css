@@ -2,8 +2,8 @@
 /* Seção Contato - Mobile First */
 /* ======================== */
 .contact {
-  background-color: #1a1a1a;
-  color: white;
+  background-color: var(--background-secondary);
+  color: var(--text-primary);
   padding: 4rem 2rem;
   text-align: center;
 }
@@ -44,24 +44,24 @@
 .form-group input,
 .form-group textarea {
   padding: 0.8rem;
-  border: 1px solid #333;
+  border: 1px solid var(--border-primary);
   border-radius: 16px;
-  background-color: #2a2a2a;
-  color: white;
+  background-color: var(--background-tertiary);
+  color: var(--text-primary);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 5px var(--shadow-primary);
 }
 
 .cta {
   align-self: center;
   padding: 1rem 2rem;
-  background-color: #007bff;
-  color: white;
+  background-color: var(--brand-primary);
+  color: #fff;
   text-decoration: none;
   border-radius: 16px;
   font-weight: bold;
@@ -71,7 +71,7 @@
 }
 
 .cta:hover {
-  background-color: #0056b3;
+  background-color: var(--brand-secondary);
   border-radius: 8px;
 }
 
@@ -85,13 +85,13 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: white;
+  color: var(--text-primary);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .contact-link:hover {
-  color: #007bff;
+  color: var(--brand-primary);
   border-radius: 8px;
 }
 

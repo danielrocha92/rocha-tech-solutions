@@ -5,8 +5,8 @@
 .how-it-works {
   /* Usamos padding horizontal para garantir espaço nas bordas em telas pequenas */
   padding: 80px 20px;
-  background-color: #0d0d0d;
-  color: #e0e0e0;
+  background-color: var(--background-secondary);
+  color: var(--text-primary);
   text-align: center;
 }
 
@@ -18,7 +18,7 @@
 .how-it-works .section-title {
   font-size: 2.2rem;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 .how-it-works .subtitle {
@@ -45,7 +45,7 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background-color: #333;
+  background-color: var(--border-primary);
 }
 
 .timeline-item {
@@ -89,20 +89,19 @@
   box-sizing: border-box;
 
   /* Efeito Vidro */
-  background-color: rgba(255, 255, 255, 0.05); 
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.1); 
-
+    background-color: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid var(--border-secondary);
   padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 8px var(--shadow-primary);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .timeline-content:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 20px var(--shadow-primary);
 }
 
 /* ================================================ */
@@ -119,12 +118,12 @@
   font-size: 1.1rem;
 
   /* Efeito Vidro */
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--border-secondary);
   
-  color: #ffffff;
+  color: var(--text-primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -149,7 +148,7 @@
   font-size: 1.1rem;
   margin-top: 0;
   margin-bottom: 10px;
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 .timeline-content p {
@@ -164,7 +163,7 @@
     position: -webkit-sticky; /* For Safari */
     position: sticky;
     bottom: 0;
-    background-color: #0d0d0d;
+    background-color: var(--background-primary);
     padding: 20px 0;
     z-index: 1;
   }

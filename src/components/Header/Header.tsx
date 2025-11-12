@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Importamos o Link para a rota do Portfólio
+import { Link } from "react-router-dom";
+import ThemeSelector from "../ThemeSelector/ThemeSelector";
 import "./Header.css";
 
 const Header = () => {
@@ -9,7 +10,6 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Função para fechar o menu ao clicar em um item
   const handleNavClick = () => {
     setIsMenuOpen(false);
   };
@@ -21,9 +21,6 @@ const Header = () => {
         <Link to="/#hero" className="logo" aria-label="Página Inicial">
           <img src="/assets/img/logo.png" alt="Logo Rocha Tech Solutions" className="logo-img" />
         </Link>
-        <button className="menu-toggle" onClick={toggleMenu} aria-label="Abrir menu">
-          <span className={`hamburger-icon ${isMenuOpen ? "open" : ""}`}></span>
-        </button>
         <nav className={`nav ${isMenuOpen ? "open" : ""}`}>
           <ul className="nav-list" onClick={handleNavClick}>
             {/* Links de âncora (mesma página) usam <a> */}
@@ -53,8 +50,16 @@ const Header = () => {
             <li className="nav-item">
               <a href="/#contact">Contato</a>
             </li>
+            <li className="nav-item">
+              <ThemeSelector />
+            </li>
           </ul>
         </nav>
+        <div className="header-actions">
+          <button className="menu-toggle" onClick={toggleMenu} aria-label="Abrir menu">
+            <span className={`hamburger-icon ${isMenuOpen ? "open" : ""}`}></span>
+          </button>
+        </div>
       </div>
     </header>
   );

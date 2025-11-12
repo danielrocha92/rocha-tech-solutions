@@ -3,8 +3,8 @@
 /* ======================== */
 .services {
   padding: 80px 20px;
-  background-color: #0d0d0d;
-  color: #e0e0e0;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
 }
 
 .services-container {
@@ -16,7 +16,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 50px;
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 .services-grid {
@@ -26,17 +26,17 @@
 }
 
 .service-card {
-  background-color: #1a1a1a;
+  background-color: var(--background-secondary);
   padding: 30px;
   border-radius: 8px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px var(--shadow-primary);
 }
 
 .service-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px var(--shadow-primary);
 }
 
 .service-icon {
@@ -47,7 +47,7 @@
 .service-card h3 {
   font-size: 1.2rem;
   margin-bottom: 10px;
-  color: #007bff;
+  color: var(--brand-primary);
 }
 
 .service-card p {

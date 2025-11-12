@@ -4,8 +4,13 @@ import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import './index.css';
 import './App.css';
+import './styles/theme.css'; // Import the new theme.css
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { setupThemeSwitcher } from './scripts/theme-switcher'; // Import setupThemeSwitcher
+
+// Initialize the theme switcher
+setupThemeSwitcher();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

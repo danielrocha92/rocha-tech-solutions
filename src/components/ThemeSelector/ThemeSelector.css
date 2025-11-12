@@ -1,0 +1,97 @@
+/* src/components/ThemeSelector/ThemeSelector.css */
+
+.theme-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 60px; /* Largura total do slider */
+  height: 30px; /* Altura total do slider */
+}
+
+.theme-toggle-input {
+  display: none; /* Esconde o checkbox nativo */
+}
+
+.theme-toggle-label {
+  width: 100%;
+  height: 100%;
+  background-color: #e0e0e0; /* Fundo do slider - tema claro */
+  border-radius: 15px; /* Metade da altura para forma de cápsula */
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.7); /* Sombra interna para relevo */
+}
+
+/* Estilos para o thumb (botão circular) */
+.theme-toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 26px; /* Largura do thumb */
+  height: 26px; /* Altura do thumb */
+  background-color: #ffffff; /* Cor do thumb - tema claro */
+  border-radius: 50%; /* Forma circular */
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.8); /* Sombra para relevo */
+}
+
+/* Estilos para os ícones */
+.theme-toggle-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2em; /* Tamanho dos ícones */
+  transition: opacity 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sun-icon {
+  left: 8px;
+  color: #a0a0a0; /* Cor do sol - tema claro */
+  opacity: 1;
+}
+
+.moon-icon {
+  right: 8px;
+  color: #808080; /* Cor da lua - tema escuro */
+  opacity: 0; /* Escondido por padrão no tema claro */
+}
+
+/* Estado "checked" (tema escuro) */
+.theme-toggle-input:checked + .theme-toggle-label {
+  background-color: #333333; /* Fundo do slider - tema escuro */
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.7), inset -2px -2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle-input:checked + .theme-toggle-label .theme-toggle-thumb {
+  transform: translateX(30px); /* Move o thumb para a direita */
+  background-color: #555555; /* Cor do thumb - tema escuro */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), -2px -2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle-input:checked + .theme-toggle-label .sun-icon {
+  opacity: 0; /* Esconde o sol */
+}
+
+.theme-toggle-input:checked + .theme-toggle-label .moon-icon {
+  opacity: 1; /* Mostra a lua */
+}
+
+/* Estilos para os SVGs dentro dos ícones */
+.theme-toggle-icon svg {
+  width: 18px; /* Ajuste o tamanho do SVG */
+  height: 18px;
+  stroke-width: 2;
+}
+
+.sun-icon svg {
+  color: #a0a0a0; /* Cor do sol */
+}
+
+.moon-icon svg {
+  color: #808080; /* Cor da lua */
+}
