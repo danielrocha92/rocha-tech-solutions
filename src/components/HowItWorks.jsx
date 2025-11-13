@@ -36,9 +36,9 @@ const HowItWorks = () => {
     <section className="how-it-works">
       <div className="how-it-works-container" id="HowItWorks">
         <div className="how-it-works-header">
-          <h2 className="section-title">Inicie seu projeto agora!</h2>
+          <h2 className="section-title">Como funciona o nosso processo</h2>
           <p className="subtitle">
-            Se tem dúvidas sobre como funciona um projeto de criação de site, fale conosco. Não deixe para depois, use o formulário abaixo para fazer sua solicitação de orçamento!
+            Desenvolvemos um processo claro e colaborativo para garantir que seu projeto seja entregue com a máxima qualidade e dentro do prazo.
           </p>
         </div>
 

@@ -55,7 +55,7 @@ const Portfolio: React.FC = () => {
   return (
     <section id="portfolio" className="portfolio">
       <div className="portfolio-container">
-        <h2 className="section-title">Meus Projetos</h2>
+        <h2 className="section-title">Nossos Projetos</h2>
         <div className="portfolio-grid">
           {portfolioProjects.map((project, index) => (
               <div key={index} className="portfolio-card">

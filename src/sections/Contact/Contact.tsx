@@ -8,11 +8,9 @@ const Contact = () => {
   return (
     <section id="contact" className="contact">
       <div className="contact-container">
-        <h2 className="section-title">Vamos Construir Algo Juntos</h2>
+        <h2 className="section-title">Entre em Contato</h2>
         <p>
-          Se você tem um projeto em mente ou apenas quer bater um papo,
-          sinta-se à vontade para me contatar. Estou sempre aberto a novas
-          oportunidades.
+          Estamos prontos para transformar sua ideia em um projeto de sucesso. Preencha o formulário abaixo ou entre em contato através de nossos canais.
         </p>
 
         <form

@@ -50,12 +50,10 @@ const Header = () => {
             <li className="nav-item">
               <a href="/#contact">Contato</a>
             </li>
-            <li className="nav-item">
-              <ThemeSelector />
-            </li>
           </ul>
         </nav>
         <div className="header-actions">
+          <ThemeSelector />
           <button className="menu-toggle" onClick={toggleMenu} aria-label="Abrir menu">
             <span className={`hamburger-icon ${isMenuOpen ? "open" : ""}`}></span>
           </button>

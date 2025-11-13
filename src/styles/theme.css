@@ -2,26 +2,27 @@
 .theme-light {
   --background-primary: #ffffff;
   --background-primary-rgb: 255, 255, 255;
-  --background-secondary: #f8f9fa;
-  --background-secondary-rgb: 248, 249, 250;
-  --background-tertiary: #e9ecef;
-  --background-tertiary-rgb: 233, 236, 239;
-  --text-primary: #212529;
-  --text-primary-rgb: 33, 37, 41;
-  --text-secondary: #495057;
-  --text-secondary-rgb: 73, 80, 87;
-  --text-muted: #6c757d;
-  --text-muted-rgb: 108, 117, 125;
-  --border-primary: #dee2e6;
-  --border-secondary: #ced4da;
-  --shadow-primary: rgba(0, 0, 0, 0.1);
-  --brand-primary: #007bff;
-  --brand-primary-rgb: 0, 123, 255;
-  --brand-secondary: #6c757d;
-  --brand-success: #28a745;
-  --brand-danger: #dc3545;
-  --brand-warning: #ffc107;
-  --brand-info: #17a2b8;
+  --background-secondary: #f7f9fc;
+  --background-secondary-rgb: 247, 249, 252;
+  --background-tertiary: #edf2f7;
+  --background-tertiary-rgb: 237, 242, 247;
+  --text-primary: #1a202c;
+  --text-primary-rgb: 26, 32, 44;
+  --text-secondary: #4a5568;
+  --text-secondary-rgb: 74, 85, 104;
+  --text-muted: #718096;
+  --text-muted-rgb: 113, 128, 150;
+  --border-primary: #e2e8f0;
+  --border-secondary: #cbd5e0;
+  --shadow-primary: rgba(0, 0, 0, 0.05);
+  --brand-primary: #3182ce; /* Modern Blue */
+  --brand-primary-rgb: 49, 130, 206;
+  --brand-secondary: #63b3ed; /* Lighter Blue */
+  --brand-success: #38a169; /* Modern Green */
+  --brand-danger: #e53e3e; /* Modern Red */
+  --brand-warning: #dd6b20; /* Modern Orange */
+  --brand-info: #3182ce; /* Modern Blue */
+  --header-background: rgba(247, 249, 252, 0.8);
 }
 
 .theme-dark {
@@ -47,6 +48,7 @@
   --brand-danger: #dc3545;
   --brand-warning: #ffc107;
   --brand-info: #0dcaf0;
+  --header-background: rgba(34, 34, 34, 0.8);
 }
 
 body {
