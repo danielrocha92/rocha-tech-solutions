@@ -71,6 +71,23 @@ const projects: Project[] = [ // Adiciona a tipagem à constante
       { src: "/assets/img/renata-ribeiro-3.png", alt: "Captura de tela da página de contato do site Renata Ribeiro." }
     ]
   },
+  {
+    id: "mao-de-cera",
+    title: "Mão de Cera Oficial",
+    githubLink: "https://github.com/danielrocha92/mao-de-cera-oficial",
+    siteLink: "https://mao-de-cera-oficial.vercel.app/",
+    role: "Desenvolvedor Front-end, Designer",
+    description: "Desenvolvimento do site oficial para a marca Mão de Cera, focado na apresentação de produtos artesanais e informações sobre a marca. O projeto visa fortalecer a presença online e facilitar o contato com clientes.",
+    highlights: "Design moderno e responsivo, galeria de produtos, informações detalhadas sobre a marca e formulário de contato.",
+    technologies: ["React.js", "Next.js", "CSS"],
+    gallery: [
+      { src: "/assets/img/mao-de-cera-oficial/Captura de tela 2025-11-17 020351.png", alt: "Captura de tela do site Mão de Cera Oficial." },
+      { src: "/assets/img/mao-de-cera-oficial/Captura de tela 2025-11-17 020407.png", alt: "Captura de tela do site Mão de Cera Oficial." },
+      { src: "/assets/img/mao-de-cera-oficial/Captura de tela 2025-11-17 020427.png", alt: "Captura de tela do site Mão de Cera Oficial." },
+      { src: "/assets/img/mao-de-cera-oficial/Captura de tela 2025-11-17 020435.png", alt: "Captura de tela do site Mão de Cera Oficial." },
+      { src: "/assets/img/mao-de-cera-oficial/Captura de tela 2025-11-17 020445.png", alt: "Captura de tela do site Mão de Cera Oficial." }
+    ]
+  },
 ];
 
 const ProjectDetail: React.FC = () => { // Tipagem do componente

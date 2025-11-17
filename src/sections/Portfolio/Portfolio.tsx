@@ -47,6 +47,16 @@ const portfolioProjects: ProjectCard[] = [
             alt: 'Projeto Renata Ribeiro',
             type: 'video',
         }
+    },
+    {
+        title: 'Mão de Cera Oficial',
+        description: 'Site oficial para a marca Mão de Cera, focado na apresentação de produtos e informações. (Tecnologias: React js, Next js, CSS dedicado).',
+        linkTo: '/portfolio/mao-de-cera',
+        media: {
+            src: '/assets/videos/mao-de-cera-oficial.mp4',
+            alt: 'Projeto Mão de Cera Oficial',
+            type: 'video',
+        }
     }
 ];
 
