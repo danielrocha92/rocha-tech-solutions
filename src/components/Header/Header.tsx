@@ -28,7 +28,7 @@ const Header = () => {
               <a href="/#hero">Início</a>
             </li>
             <li className="nav-item">
-              <Link to="/about">Sobre</Link>
+              <Link to="/about">Nossa Metodologia</Link>
             </li>
             <li className="nav-item">
               <a href="/#services">Serviços</a>
@@ -48,7 +48,7 @@ const Header = () => {
 
             {/* Link de âncora (mesma página) usa <a> */}
             <li className="nav-item">
-              <a href="/#contact">Contato</a>
+              <Link to="/contact">Contato</Link>
             </li>
           </ul>
         </nav>

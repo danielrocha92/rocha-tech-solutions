@@ -1,44 +1,53 @@
 import React from 'react';
+import './HowItWorks.css';
+import { FiMessageSquare, FiCrosshair, FiFileText, FiMap, FiLayout, FiCode, FiCheckCircle } from 'react-icons/fi';
 
 const HowItWorks = () => {
   const steps = [
     {
-      title: 'Solicitação de Orçamento',
-      description: 'Nesta etapa, nosso time vai avaliar seu pedido inicial e, logo em seguida, marcar uma reunião para esclarecer melhor tudo que você precisa.',
+      title: 'Solicitação e Descoberta',
+      description: 'Nesta etapa, avaliamos seu pedido inicial e agendamos uma reunião estratégica para entender a fundo o seu modelo de negócio e necessidades.',
+      icon: <FiMessageSquare />
     },
     {
       title: 'Definição do Escopo',
-      description: 'Após a definição do orçamento, você tem a opção de aprovar, fazer uma contraproposta ou modificar o escopo, até que o projeto esteja ajustado.',
+      description: 'Após a análise, estruturamos uma proposta técnica e comercial clara. Você pode aprovar ou ajustar o escopo até que esteja perfeitamente alinhado.',
+      icon: <FiCrosshair />
     },
     {
-      title: 'Envio do Briefing',
-      description: 'Precisaremos que você preencha um briefing com informações relevantes sobre o negócio, valores, persona e necessidades, que são essenciais para o desenvolvimento.',
+      title: 'Briefing Direcionado',
+      description: 'Você preenche nosso questionário focado em inteligência de mercado, detalhando personas, valores e o principal objetivo de conversão do projeto.',
+      icon: <FiFileText />
     },
     {
-      title: 'Planejamento e Conteúdo',
-      description: 'Com o briefing, nosso time faz uma pesquisa e análise para preparar um planejamento completo e estruturado do mapa de conteúdo do site.',
+      title: 'Planejamento Estratégico',
+      description: 'Nosso time realiza uma pesquisa profunda e cria o mapa do projeto: desde a arquitetura de informação até as chamadas para ação (CTAs).',
+      icon: <FiMap />
     },
     {
-      title: 'Protótipo e Layout',
-      description: 'O projeto avança para a etapa de criação, onde os designers irão propor e elaborar o layout completo do site na forma de um protótipo.',
+      title: 'UI/UX e Protótipo',
+      description: 'Avançamos para o design visual, criando um protótipo de alta fidelidade focado em experiência do usuário e conversão. Tudo é validado com você.',
+      icon: <FiLayout />
     },
     {
-      title: 'Programação e Montagem',
-      description: 'Com o protótipo aprovado, o site entra na fase de programação, onde todos os textos, imagens, páginas e recursos são implementados e testados.',
+      title: 'Engenharia e Desenvolvimento',
+      description: 'Com o visual aprovado, inicia-se a codificação limpa e otimizada. Implementamos responsividade, SEO on-page e sistemas de performance.',
+      icon: <FiCode />
     },
     {
-      title: 'Publicação e Conclusão',
-      description: 'Após a aprovação final, a equipe de desenvolvimento procederá com a publicação do site, que será submetido a uma série de testes e integrações.',
+      title: 'Testes e Lançamento',
+      description: 'Realizamos rodadas de testes rigorosos. Com a validação final, publicamos a solução e entregamos a chave automatizada do seu crescimento.',
+      icon: <FiCheckCircle />
     },
   ];
 
   return (
-    <section className="how-it-works">
-      <div className="how-it-works-container" id="HowItWorks">
+    <section className="how-it-works-section" id="HowItWorks">
+      <div className="how-it-works-container">
         <div className="how-it-works-header">
-          <h2 className="section-title">Como funciona o nosso processo</h2>
+          <h2 className="section-title">Nossa Metodologia</h2>
           <p className="subtitle">
-            Desenvolvemos um processo claro e colaborativo para garantir que seu projeto seja entregue com a máxima qualidade e dentro do prazo.
+            Um processo previsível e transparente, desenhado para transformar sua visão em um ativo digital de alta performance no menor tempo viável.
           </p>
         </div>
 
@@ -46,11 +55,9 @@ const HowItWorks = () => {
           <div className="timeline">
             {steps.map((step, index) => (
               <div key={index} className="timeline-item">
-                {/* O ESTILO DE TESTE FOI APLICADO AQUI */}
-                <div
-                  className="timeline-content"
-                >
+                <div className="timeline-content">
                   <div className="step-number">{index + 1}</div>
+                  <div className="content-icon">{step.icon}</div>
                   <h3>{step.title}</h3>
                   <p>{step.description}</p>
                 </div>

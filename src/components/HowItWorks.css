@@ -1,13 +1,14 @@
 /* ======================================= */
-/* Seção "Como Funciona" - Layout Único    */
+/* Seção "Como Funciona" - Estrutura Fiel  */
 /* ======================================= */
 
-.how-it-works {
+.how-it-works-section {
   /* Usamos padding horizontal para garantir espaço nas bordas em telas pequenas */
   padding: 80px 20px;
   background-color: var(--background-secondary);
   color: var(--text-primary);
   text-align: center;
+  border-top: 1px solid var(--border-primary);
 }
 
 .how-it-works-container {
@@ -15,16 +16,19 @@
   margin: 0 auto;
 }
 
-.how-it-works .section-title {
-  font-size: 2.2rem;
+.how-it-works-header .section-title {
+  font-size: 2.5rem;
   margin-bottom: 20px;
   color: var(--text-primary);
+  font-weight: 700;
 }
 
-.how-it-works .subtitle {
-  font-size: 1rem;
-  margin-bottom: 50px;
+.how-it-works-header .subtitle {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 50px auto;
   line-height: 1.6;
+  color: var(--text-secondary);
 }
 
 /* ======================== */
@@ -34,26 +38,31 @@
   position: relative;
   width: 100%;
   margin: 0 auto;
+  padding-top: 20px;
 }
 
 /* A linha vertical central */
 .timeline::before {
   content: '';
   position: absolute;
-  left: 50%;
+  left: 0%;
   transform: translateX(-50%);
   top: 0;
   bottom: 0;
   width: 2px;
-  background-color: var(--border-primary);
+  background-color: var(--brand-primary);
 }
 
 .timeline-item {
   position: relative;
-  width: 100%; /* Ocupa a largura total para posicionar o conteúdo dentro */
+  width: 90%;
+  /* Ocupa a largura total para posicionar o conteúdo dentro */
   margin-bottom: 40px;
-  display: flex; /* Usamos flexbox para o alinhamento */
-  box-sizing: border-box; /* Garante que padding não afete o cálculo */
+  display: flex;
+  /* Usamos flexbox para o alinhamento */
+  box-sizing: border-box;
+  /* Garante que padding não afete o cálculo */
+  align-items: center;
 }
 
 .timeline-item:last-child {
@@ -63,108 +72,238 @@
 /* --- O Truque para o Layout --- */
 /* Itens ÍMPARES: conteúdo à esquerda */
 .timeline-item:nth-child(odd) {
-  justify-content: flex-start; /* Alinha o card à esquerda */
+  justify-content: flex-start;
+  /* Alinha o card à esquerda */
 }
+
 .timeline-item:nth-child(odd) .timeline-content {
   text-align: right;
 }
 
-
 /* Itens PARES: conteúdo à direita */
 .timeline-item:nth-child(even) {
-  justify-content: flex-end; /* Alinha o card à direita */
+  justify-content: flex-end;
+  /* Alinha o card à direita */
 }
+
 .timeline-item:nth-child(even) .timeline-content {
   text-align: left;
 }
 
-
 /* ======================================= */
-/* Cards de Conteúdo com Efeito Vidro      */
+/* Cards de Conteúdo - Restilizados        */
 /* ======================================= */
 .timeline-content {
   position: relative;
-  /* Ocupa quase metade da tela, com espaço para a linha */
-  width: calc(50% - 25px); 
+  /* Ocupa exatamente até 40px de distância do centro */
+  width: calc(50% - 40px);
   box-sizing: border-box;
 
-  /* Efeito Vidro */
-    background-color: rgba(0, 0, 0, 0.05);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid var(--border-secondary);
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px var(--shadow-primary);
+  /* Estilização Premium */
+  background-color: var(--background-primary);
+  border: 1px solid var(--border-primary);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--shadow-primary);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .timeline-content:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px var(--shadow-primary);
+  box-shadow: 0 15px 30px var(--shadow-primary);
 }
 
 /* ================================================ */
-/* Círculo do Número com Efeito Vidro               */
+/* Ícones dentro dos Cards                          */
+/* ================================================ */
+.content-icon {
+  font-size: 2rem;
+  color: var(--brand-primary);
+  margin-bottom: 15px;
+  opacity: 0.9;
+  display: flex;
+}
+
+/* Alinhamento dos Ícones */
+.timeline-item:nth-child(odd) .content-icon {
+  justify-content: flex-end;
+}
+
+.timeline-item:nth-child(even) .content-icon {
+  justify-content: flex-start;
+}
+
+/* ================================================ */
+/* Círculo do Número - Restilizado                  */
 /* ================================================ */
 .step-number {
   position: absolute;
   top: 50%;
-  z-index: 1;
-  transform: translateY(-50%);
-  
-  width: 38px;
-  height: 38px;
-  font-size: 1.1rem;
+  z-index: 5;
 
-  /* Efeito Vidro */
-  background-color: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid var(--border-secondary);
-  
-  color: var(--text-primary);
+  width: 42px;
+  height: 42px;
+  font-size: 1.2rem;
+
+  /* Estilização Premium */
+  background-color: var(--brand-primary);
+  color: #fff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
+  font-weight: 800;
+  box-shadow: 0 0 0 4px var(--background-secondary), 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Posicionamento do círculo (Ímpar) */
 .timeline-item:nth-child(odd) .step-number {
-  right: -19px; /* Metade da largura */
-  transform: translateX(50%);
+  left: 100%;
+  margin-left: 40px;
+  transform: translate(-50%, -50%);
 }
 
 /* Posicionamento do círculo (Par) */
 .timeline-item:nth-child(even) .step-number {
-  left: -19px; /* Metade da largura */
-  transform: translateX(-50%);
+  right: 100%;
+  margin-right: 40px;
+  transform: translate(50%, -50%);
 }
 
 /* Textos dentro do Card */
 .timeline-content h3 {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   color: var(--text-primary);
+  font-weight: 600;
 }
 
 .timeline-content p {
-  font-size: 0.85rem;
-  line-height: 1.5;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
   margin-bottom: 0;
 }
 
-/* Adicionado para o efeito fixo no celular */
+/* ================================================ */
+/* Forçando a estrutura também no celular           */
+/* ================================================ */
 @media (max-width: 768px) {
   .how-it-works-header {
-    position: -webkit-sticky; /* For Safari */
+    position: -webkit-sticky;
+    /* For Safari */
     position: sticky;
     bottom: 0;
     background-color: var(--background-primary);
     padding: 20px 0;
-    z-index: 1;
+    z-index: 10;
+  }
+
+  /* Desloca a linha central para o canto esquerdo */
+  .timeline::before {
+    left: 2px;
+    transform: none;
+  }
+
+  /* Alinha todos os itens para a direita da linha */
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    justify-content: flex-end;
+  }
+
+  /* Cards ocupam o espaço restante de forma proporcional, alinhados à esquerda (leitura em "F") */
+  .timeline-content,
+  .timeline-item:nth-child(odd) .timeline-content,
+  .timeline-item:nth-child(even) .timeline-content {
+    width: calc(100% - 0px);
+    text-align: left;
+  }
+
+  /* Ícones passam para o mesmo lado verticalizado e alinhados para esquerda */
+  .timeline-item:nth-child(odd) .content-icon,
+  .timeline-item:nth-child(even) .content-icon {
+    justify-content: flex-start;
+  }
+
+  /* Os números agora viajam para a borda esquerda para interceptar a linha */
+  .timeline-item:nth-child(odd) .step-number,
+  .timeline-item:nth-child(even) .step-number {
+    left: -40px;
+    /* -40px em relação ao card + 20px da linha de fundo = 60px (cravação exata) */
+    right: auto;
+    margin: 0;
+  }
+}
+
+/* ================================================ */
+/* MEDIA QUERY DEDICADA PARA DESKTOP (Espinha de Peixe) */
+/* ================================================ */
+@media (min-width: 769px) {
+
+  /* Restaura a linha para o centro */
+  .how-it-works-section .timeline::before {
+    left: 50%;
+  }
+
+  .how-it-works-section .timeline-item {
+    width: 100%;
+    /* Reseta qualquer largura do mobile */
+    justify-content: flex-start;
+  }
+
+  /* Reset vital: remove offsets herdados do mobile ou App.css */
+  .how-it-works-section .timeline-item:nth-child(odd) .timeline-content,
+  .how-it-works-section .timeline-item:nth-child(even) .timeline-content {
+    left: auto;
+    right: auto;
+    margin: 0;
+  }
+
+  /* Itens ÍMPARES (Cartão à esquerda, bolinha na direita do cartão cravando na linha central) */
+  .how-it-works-section .timeline-item:nth-child(odd) {
+    justify-content: flex-start;
+  }
+
+  .how-it-works-section .timeline-item:nth-child(odd) .timeline-content {
+    width: calc(50% - 40px);
+    /* Deixa espaço pro centro */
+    text-align: right;
+    padding-right: 30px;
+  }
+
+  .how-it-works-section .timeline-item:nth-child(odd) .content-icon {
+    justify-content: flex-end;
+  }
+
+  .how-it-works-section .timeline-item:nth-child(odd) .step-number {
+    left: 100%;
+    right: auto;
+    margin-left: 40px;
+    margin-right: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Itens PARES (Cartão à direita, bolinha na esquerda do cartão cravando na linha central) */
+  .how-it-works-section .timeline-item:nth-child(even) {
+    justify-content: flex-end;
+  }
+
+  .how-it-works-section .timeline-item:nth-child(even) .timeline-content {
+    width: calc(50% - 40px);
+    text-align: left;
+    padding-left: 30px;
+  }
+
+  .how-it-works-section .timeline-item:nth-child(even) .content-icon {
+    justify-content: flex-start;
+  }
+
+  .how-it-works-section .timeline-item:nth-child(even) .step-number {
+    left: auto;
+    right: 100%;
+    margin-right: 40px;
+    margin-left: 0;
+    transform: translate(50%, -50%);
   }
 }

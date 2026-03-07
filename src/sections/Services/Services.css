@@ -1,10 +1,11 @@
 /* ======================== */
-/* Seção Serviços - Mobile First */
+/* Services Section Updated */
 /* ======================== */
-.services {
-  padding: 80px 20px;
+.services-section {
+  padding: 100px 20px;
   background-color: var(--background-primary);
   color: var(--text-primary);
+  border-top: 1px solid var(--border-primary);
 }
 
 .services-container {
@@ -12,58 +13,103 @@
   margin: 0 auto;
 }
 
-.services .section-title {
+.services-header {
   text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+}
+
+.services-header .section-title {
   font-size: 2.5rem;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   color: var(--text-primary);
+  font-weight: 700;
+}
+
+.services-header .section-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr;
   gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .service-card {
   background-color: var(--background-secondary);
-  padding: 30px;
-  border-radius: 8px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 6px var(--shadow-primary);
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: left;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-primary);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px var(--shadow-primary);
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 4px;
+  background-color: var(--brand-primary);
+  transition: width 0.3s ease;
 }
 
 .service-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px var(--shadow-primary);
+  box-shadow: 0 15px 30px var(--shadow-primary);
+}
+
+.service-card:hover::after {
+  width: 100%;
+  left: 0;
 }
 
 .service-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.service-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  font-size: 2.5rem;
   color: var(--brand-primary);
+  margin-bottom: 20px;
+  background-color: var(--background-tertiary);
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  box-shadow: inset 0 2px 4px var(--shadow-primary);
 }
 
-.service-card p {
-  font-size: 1rem;
-  line-height: 1.5;
+.service-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
-/* ======================== */
-/* Ajustes para Desktop */
-/* ======================== */
+.service-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
 @media (min-width: 768px) {
-  .services .section-title {
-    font-size: 3rem; /* Aumenta a fonte do título para desktop */
+  .services-header .section-title {
+    font-size: 3rem;
   }
 
-  .service-card h3 {
-    font-size: 1.5rem; /* Aumenta a fonte do título do card */
+  .service-card {
+    padding: 50px 40px;
   }
 }

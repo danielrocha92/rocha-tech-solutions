@@ -1,7 +1,4 @@
 import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope as fasEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 import "./Contact.css";
 
 const Contact = () => {
@@ -32,28 +29,6 @@ const Contact = () => {
           </div>
           <button type="submit" className="cta">Enviar Mensagem</button>
         </form>
-
-        <div className="social-links">
-          <a href="mailto:danielfrocha86@gmail.com" className="contact-link">
-            <FontAwesomeIcon icon={fasEnvelope} className="social-icon" /> E-mail
-          </a>
-          <a
-            href="https://www.linkedin.com/in/danielrocha92"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="contact-link"
-          >
-            <FontAwesomeIcon icon={faLinkedinIn} className="social-icon" /> LinkedIn
-          </a>
-          <a
-            href="https://github.com/danielrocha92"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="contact-link"
-          >
-            <FontAwesomeIcon icon={faGithub} className="social-icon" /> GitHub
-          </a>
-        </div>
       </div>
     </section>
   );

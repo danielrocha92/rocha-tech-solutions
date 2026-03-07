@@ -1,36 +1,221 @@
 /* src/App.css */
 /* Garante que o body e o root da aplicação tenham altura total */
-body, html, #root {
+body,
+html,
+#root {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-/* Container principal com Flexbox */
+/* ========================================================= */
+/* O Segredo do Rodapé fixo ao Fim (Sticky Footer Wrapper)   */
+/* ========================================================= */
 .app-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* O conteúdo principal se estica para ocupar o espaço restante */
+/* O conteúdo principal se estica para ocupar o espaço restante,
+   forçando o footer ir para o limite do fim da tela quando o conteúdo for curto */
 .main-content {
   flex: 1;
 }
 
-/* Estilos do rodapé */
-.footer {
-  padding: 20px;
-  background-color: var(--background-secondary);
-  color: var(--text-muted);
-  text-align: center;
-  font-size: 0.9rem;
+/* ======================================= */
+/* Footer Premium Glassmorphism            */
+/* ======================================= */
+.footer-container {
+  background-color: var(--background-primary);
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-primary);
+  /* Separação sutil em vidro */
+  padding-top: 60px;
+  margin-top: auto;
+  /* Garantia adicional de empuxo pro fundo */
 }
 
-/* Media Query para telas maiores que 768px */
+/* Grid de Colunas responsivo */
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 40px 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
 @media (min-width: 768px) {
-  .footer {
-    padding: 30px;
-    font-size: 1rem;
+  .footer-content {
+    grid-template-columns: 2fr 1fr 1fr;
+    /* Marca grande e duas pequenas */
+    gap: 60px;
+  }
+}
+
+/* --- Coluna de Branding --- */
+.footer-brand .footer-logo {
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.footer-brand .footer-logo span {
+  color: var(--brand-primary);
+  font-size: 2.2rem;
+  line-height: 0;
+  margin-left: 2px;
+}
+
+.footer-mission {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 320px;
+  color: var(--text-secondary);
+}
+
+/* --- Títulos das colunas --- */
+.footer-links h3,
+.footer-contact h3 {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- Links de Navegação --- */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: var(--brand-primary);
+  transform: translateX(5px);
+}
+
+/* --- Contato INFO --- */
+.footer-contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.footer-icon {
+  color: var(--brand-primary);
+  font-size: 1.2rem;
+}
+
+/* --- Redes Sociais --- */
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--background-tertiary);
+  /* Botões neutros pro tema */
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  background-color: var(--brand-primary);
+  transform: translateY(-5px);
+  /* Flutuação Premium */
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(30, 102, 245, 0.3);
+}
+
+/* ======================================= */
+/* Bottom Bar (Copyright e Assinatura)     */
+/* ======================================= */
+.footer-bottom {
+  border-top: 1px solid var(--border-primary);
+  padding: 20px;
+  text-align: center;
+  background-color: var(--background-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.footer-dev {
+  margin: 0;
+}
+
+.footer-bottom .heart {
+  color: #ff3366;
+  /* Rosa vibrante pro design */
+  font-size: 0.95rem;
+  animation: pulse 1.5s infinite;
+  display: inline-block;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    border-top: none;
+    /* Deixa suave no desktop */
   }
 }

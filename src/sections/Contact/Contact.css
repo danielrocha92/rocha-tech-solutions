@@ -1,124 +1,132 @@
 /* ======================== */
-/* Seção Contato - Mobile First */
+/* Seção Contato - Premium UI */
 /* ======================== */
 .contact {
   background-color: var(--background-secondary);
   color: var(--text-primary);
-  padding: 4rem 2rem;
+  padding: 80px 20px;
   text-align: center;
+  border-top: 1px solid var(--border-primary);
+  /* Separação theme-aware */
 }
 
+/* ======================== */
+/* Largura alinhada com as demais seções (Desktop) */
+/* ======================== */
 .contact-container {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .contact .section-title {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
 .contact-container p {
   font-size: 1.1rem;
-  margin-bottom: 2rem;
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  line-height: 1.6;
+  color: var(--text-secondary);
 }
 
+/* Container do Formulário com variáveis do Tema */
 .contact-form {
+  background-color: var(--background-tertiary);
+  /* Fundo com contraste da theme */
+  border: 1px solid var(--border-secondary);
+  border-radius: 16px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: 20px;
   text-align: left;
+  max-width: 900px;
+  /* Formulário não precisa ocupar 100% de 1200px para não esticar inputs, mas o container principal o engloba e centraliza */
+  margin: 0 auto;
+  box-shadow: 0 4px 15px var(--shadow-primary);
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
+  gap: 8px;
 }
 
 .form-group label {
-  margin-bottom: 0.5rem;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
 }
 
 .form-group input,
 .form-group textarea {
-  padding: 0.8rem;
+  padding: 15px;
   border: 1px solid var(--border-primary);
-  border-radius: 16px;
-  background-color: var(--background-tertiary);
+  border-radius: 12px;
+  background-color: var(--background-primary);
   color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
   border-color: var(--brand-primary);
-  box-shadow: 0 0 5px var(--shadow-primary);
+  box-shadow: 0 0 10px rgba(30, 102, 245, 0.2);
 }
 
 .cta {
-  align-self: center;
-  padding: 1rem 2rem;
+  align-self: flex-start;
+  padding: 14px 32px;
   background-color: var(--brand-primary);
   color: #fff;
   text-decoration: none;
-  border-radius: 16px;
+  border-radius: 30px;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  transition: all 0.3s ease;
   border: none;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 .cta:hover {
   background-color: var(--brand-secondary);
-  border-radius: 8px;
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.contact-link {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--text-primary);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.contact-link:hover {
-  color: var(--brand-primary);
-  border-radius: 8px;
-}
-
-.social-icon {
-  font-size: 1.5rem;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(30, 102, 245, 0.3);
 }
 
 /* ======================== */
 /* Ajustes para Desktop */
 /* ======================== */
 @media (min-width: 768px) {
-  .contact-form {
-    display: flex;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-
+  .contact .section-title {
+    font-size: 2.5rem;
   }
 
-  /* Garante que o campo de mensagem e o botão ocupem a largura total */
-  .form-group.message,
+  /* Grid corrigido: era display flex e usava grid columns antes */
+  .contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+
+  /* O campo da mensagem e botão ocupam as duas colunas inteiras */
+  .form-group:nth-child(3),
   .cta {
     grid-column: 1 / -1;
   }
 
-  /* Alinha o botão à esquerda no desktop */
+  /* Alinha o botão centralizado no desktop */
   .cta {
-    justify-self: start;
-    align-self: flex-end;
+    justify-self: center;
+    width: auto;
+    min-width: 250px;
   }
 }

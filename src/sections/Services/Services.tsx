@@ -1,39 +1,43 @@
 import React from 'react';
 import "./Services.css";
-import { BsGlobe, BsCart, BsGear, BsRocket } from 'react-icons/bs';
+import { FiMonitor, FiTrendingUp, FiSettings, FiShoppingCart } from 'react-icons/fi';
 
 const Services = () => {
   return (
-    <section id="services" className="services">
+    <section id="services" className="services-section">
       <div className="services-container">
-        <h2 className="section-title">Serviços que impulsionam o seu negócio</h2>
+        <div className="services-header">
+          <h2 className="section-title">Nossas Soluções</h2>
+          <p className="section-subtitle">Oferecemos tudo o que você precisa para crescer de ponta a ponta: do clique do cliente à gestão do seu caixa.</p>
+        </div>
+
         <div className="services-grid">
-          {/* Card de Serviço 1: Sites Profissionais */}
+          {/* Card 1: Tráfego */}
           <div className="service-card">
-            <div className="service-icon"><BsGlobe /></div>
-            <h3>Criação de Sites Profissionais</h3>
-            <p>Desenvolvemos sites institucionais, blogs e landing pages com design moderno e foco na experiência do usuário para fortalecer sua presença online.</p>
+            <div className="service-icon"><FiTrendingUp /></div>
+            <h3 className="service-title">Tráfego Pago & SEO Avançado</h3>
+            <p className="service-desc">Colocamos sua marca no topo do Google. Criamos campanhas estratégicas de anúncios e otimização orgânica fina para fazer o seu telefone tocar todos os dias com clientes altamente qualificados.</p>
           </div>
 
-          {/* Card de Serviço 2: E-commerce */}
+          {/* Card 2: Consultoria */}
           <div className="service-card">
-            <div className="service-icon"><BsCart /></div>
-            <h3>E-commerce sob medida</h3>
-            <p>Criamos lojas virtuais personalizadas, seguras e otimizadas para conversão, prontas para escalar suas vendas.</p>
+            <div className="service-icon"><FiSettings /></div>
+            <h3 className="service-title">Consultoria e Inteligência de Gestão</h3>
+            <p className="service-desc">Alinhamos sua operação com resultados. Aplicamos a agilidade da metodologia PDCA e o rigor da precisão contábil para garantir crescimento seguro, previsível e orientado por dados executivos.</p>
           </div>
 
-          {/* Card de Serviço 3: Aplicações Web */}
+          {/* Card 3: Sites e Landing Pages */}
           <div className="service-card">
-            <div className="service-icon"><BsGear /></div>
-            <h3>Aplicações Web</h3>
-            <p>Desenvolvemos sistemas e aplicações web sob medida para automatizar processos, aumentar a produtividade e otimizar a gestão do seu negócio.</p>
+            <div className="service-icon"><FiMonitor /></div>
+            <h3 className="service-title">Ecossistemas Web de Conversão</h3>
+            <p className="service-desc">Desenvolvemos sites institucionais e Landing Pages de alto desempenho, criados com foco exclusivo na experiência imersiva do usuário e formatados para alavancar sua captação de clientes.</p>
           </div>
 
-          {/* Card de Serviço 4: SEO & Performance */}
+          {/* Card 4: E-commerces & Sistemas */}
           <div className="service-card">
-            <div className="service-icon"><BsRocket /></div>
-            <h3>SEO & Performance</h3>
-            <p>Aplicamos as melhores práticas de SEO e otimização de performance para que seu site alcance as primeiras posições no Google e ofereça a melhor experiência ao usuário.</p>
+            <div className="service-icon"><FiShoppingCart /></div>
+            <h3 className="service-title">E-commerce e Sistemas Web</h3>
+            <p className="service-desc">Construímos lojas virtuais robustas para escalar a venda de seus produtos e sistemas web integrados sob medida, automatizando processos que reduzem custos e aumentam a produtividade da sua equipe.</p>
           </div>
         </div>
       </div>

@@ -6,6 +6,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -41,22 +42,27 @@
 .hero-subtitle,
 .hero-cta {
   animation: fadeInUp 0.8s ease-out forwards;
-  opacity: 0; /* Começa invisível */
+  opacity: 0;
+  /* Começa invisível */
 }
 
 .hero-title {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   /* font-weight: bold; -> Removido, já está no index.css */
-  animation-delay: 0.2s; /* Atraso para o título */
+  animation-delay: 0.2s;
+  /* Atraso para o título */
 }
 
 .hero-subtitle {
   font-size: 1.2rem;
-  font-weight: normal; /* Mantido para ser mais leve que o título */
-  color: var(--text-secondary); /* Levemente mais claro para melhor contraste */
+  font-weight: normal;
+  /* Mantido para ser mais leve que o título */
+  color: var(--text-secondary);
+  /* Levemente mais claro para melhor contraste */
   margin-bottom: 2rem;
-  animation-delay: 0.4s; /* Atraso para o subtítulo */
+  animation-delay: 0.4s;
+  /* Atraso para o subtítulo */
 }
 
 .hero-cta {
@@ -64,7 +70,8 @@
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  animation-delay: 0.6s; /* Atraso para os botões */
+  animation-delay: 0.6s;
+  /* Atraso para os botões */
 }
 
 /* ======================== */
@@ -75,24 +82,29 @@
   font-size: 1rem;
   font-weight: bold;
   text-decoration: none;
-  border-radius: 30px; /* Bordas mais suaves */
+  border-radius: 30px;
+  /* Bordas mais suaves */
   cursor: pointer;
-  transition: all 0.3s ease; /* Transição para todas as propriedades */
+  transition: all 0.3s ease;
+  /* Transição para todas as propriedades */
   border: 2px solid transparent;
   min-width: 200px;
   text-align: center;
 }
 
 .cta-button.primary {
-  background-color: var(--brand-primary); /* Novo azul primário */
+  background-color: var(--brand-primary);
+  /* Novo azul primário */
   color: #fff;
   border-color: var(--brand-primary);
 }
 
 .cta-button.primary:hover {
-  background-color: var(--brand-secondary); /* Azul mais escuro no hover */
+  background-color: var(--brand-secondary);
+  /* Azul mais escuro no hover */
   border-color: var(--brand-secondary);
-  transform: scale(1.05); /* Efeito de crescimento */
+  transform: scale(1.05);
+  /* Efeito de crescimento */
 }
 
 .cta-button.secondary {
@@ -104,25 +116,76 @@
 .cta-button.secondary:hover {
   background-color: #fff;
   color: var(--background-primary);
-  transform: scale(1.05); /* Efeito de crescimento */
+  transform: scale(1.05);
+  /* Efeito de crescimento */
 }
 
 /* ======================== */
-/* Vídeo de Fundo */
+/* Fundo de Vídeo e Efeito "Reveal" (Tech Spotlight) */
 /* ======================== */
-.hero-video {
+.tech-video-container {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -1;
-  object-fit: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-color: var(--background-primary, #0d0d12);
+  overflow: hidden;
 }
 
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  /* Dá um leve escurecimento no vídeo nativo para contraste */
+}
+
+/* Camada "Tech" que cobre e esconde o vídeo usando uma Grade. Furada pelo Hover */
+.tech-reveal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: var(--background-primary, #0d0d12);
+  /* Cor de fundo que cega/esconde  */
+
+  /* Efeito de Blueprint / Grid tecnológico desenhada no fundo escuro */
+  background-image:
+    linear-gradient(rgba(30, 102, 245, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 102, 245, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: center;
+
+  /* Máscara: A mágica acontece aqui.
+     Tudo que é BLACK (preto opaco na máscara) = MOSTRA o .tech-reveal-overlay, portanto NÃO VEMOS o vídeo.
+     Tudo que é TRANSPARENT = ESCONDE essa div, portanto REVELA o vídeo que está embaixo. */
+  mask-image: radial-gradient(circle 350px at var(--mouse-x, 50vw) var(--mouse-y, 50vh),
+      transparent 0%,
+      /* Furo total no centro do ponteiro */
+      rgba(0, 0, 0, 0.8) 50%,
+      /* Começa a opacar o furo */
+      black 80%
+      /* Volta a tapar cem porcento */
+    );
+  -webkit-mask-image: radial-gradient(circle 350px at var(--mouse-x, 50vw) var(--mouse-y, 50vh),
+      transparent 0%,
+      rgba(0, 0, 0, 0.8) 50%,
+      black 80%);
+
+  transition: opacity 0.4s ease, mask-image 0.1s ease, -webkit-mask-image 0.1s ease;
+}
+
+/* Máscara quando o mouse NÃO está na tela (esconde o vídeo deixando só o grid, até entrar) */
+.tech-reveal-overlay:not(.mouse-active) {
+  mask-image: none;
+  -webkit-mask-image: none;
+}
+
+/* Filtro geral sob o texto para garantir sempre ótima legibilidade do Título da landing */
 .hero-section::after {
   content: '';
   position: absolute;
@@ -130,29 +193,44 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(var(--background-primary-rgb), 0.6);
+  background-color: rgba(10, 10, 12, 0.2);
+  /* Sombra extra pra UI */
   z-index: 0;
+  pointer-events: none;
 }
 
+
 /* ======================== */
-/* Ajustes para Desktop */
+/* Ajuste de Convivência Mobile x Desktop */
 /* ======================== */
+
+/* No Mobile (< 768px): Vídeo Totalmente Visível (O Tracker morre e damos fallback) */
+@media (max-width: 767px) {
+  .tech-reveal-overlay {
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+
+    /* Substituímos a capa inteira preta por um simples Grid transparente velado pra ficar bonito por cima do video sempre presente */
+    background-color: rgba(13, 13, 18, 0.7);
+    background-image:
+      linear-gradient(rgba(30, 102, 245, 0.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(30, 102, 245, 0.12) 1px, transparent 1px);
+  }
+}
+
+/* No Desktop (>= 768px): Usa o Tech Spotlight com as devidas fontes grandes */
 @media (min-width: 768px) {
   .hero-title {
     font-size: 4rem;
   }
 
   .hero-subtitle {
-    font-size: 1.8rem; /* Ajustado para melhor proporção */
+    font-size: 1.8rem;
   }
 
   .hero-cta {
     flex-direction: row;
     justify-content: center;
     gap: 20px;
-  }
-
-  .hero-section::after {
-    background-color: rgba(var(--background-primary-rgb), 0.7);
   }
 }
