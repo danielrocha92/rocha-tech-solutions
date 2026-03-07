@@ -31,19 +31,12 @@ const Header = () => {
               <Link to="/about">Nossa Metodologia</Link>
             </li>
             <li className="nav-item">
-              <a href="/#services">Serviços</a>
-            </li>
-            <li className="nav-item">
               <a href="/#HowItWorks">Como Funciona</a>
             </li>
 
             {/* Link para outra página/rota usa <Link> */}
             <li className="nav-item">
               <Link to="/portfolio">Portfólio</Link>
-            </li>
-
-            <li className="nav-item">
-              <a href="/#testimonials">Avaliações</a>
             </li>
 
             {/* Link de âncora (mesma página) usa <a> */}

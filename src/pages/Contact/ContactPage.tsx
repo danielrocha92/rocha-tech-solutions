@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { FiMail, FiPhone, FiMapPin, FiMessageCircle } from 'react-icons/fi';
+import { FiMail, FiMapPin, FiMessageCircle } from 'react-icons/fi';
 import './ContactPage.css';
 
 const ContactPage = () => {
@@ -43,14 +43,14 @@ const ContactPage = () => {
                                     <div className="info-text">
                                         <strong>WhatsApp Profissional</strong>
                                         {/* Substitua 5511999999999 pelo número real sem espaços/símbolos */}
-                                        <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">Iniciar Conversa Segura</a>
+                                        <a href="https://wa.me/5511956190605" target="_blank" rel="noopener noreferrer">Iniciar Conversa Segura</a>
                                     </div>
                                 </li>
                                 <li>
                                     <div className="info-icon"><FiMapPin /></div>
                                     <div className="info-text">
                                         <strong>Localização</strong>
-                                        <span>São Paulo, SP - Brasil (Atendimento Global)</span>
+                                        <span>São Paulo, SP - Brasil</span>
                                     </div>
                                 </li>
                             </ul>
@@ -59,7 +59,7 @@ const ContactPage = () => {
                         {/* Mapa (Iframe Google Maps - Focado em SP como Exemplo de Base) */}
                         <div className="map-container">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1974797184294!2d-46.658632624465494!3d-23.561332061611394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%20-%20S%C3%A3o%20Paulo%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1709432490520!5m2!1spt-BR!2sbr"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.1546745915975!2d-46.68443642379027!3d-23.490937659010378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef9f8d8c2016b%3A0xc75fcf7da2ef3ffa!2sRocha%20Tech%20Solutions!5e0!3m2!1spt-BR!2sbr!4v1772893269643!5m2!1spt-BR!2sbr"
                                 width="100%"
                                 height="100%"
                                 style={{ border: 0 }}

@@ -10,7 +10,7 @@ const Footer = () => {
         {/* Coluna 1: Marca e Missão */}
         <div className="footer-brand">
           <Link to="/" className="footer-logo">
-            Rocha Tech<span>.</span>
+            Rocha Tech Solutions<span>.</span>
           </Link>
           <p className="footer-mission">
             Inteligência Tecnológica e Estratégia de Negócio.
@@ -35,11 +35,11 @@ const Footer = () => {
           <ul>
             <li>
               <FiPhone className="footer-icon" />
-              <span>(11) 99999-9999</span>
+              <span>(11) 95619-0605</span>
             </li>
             <li>
               <FiMail className="footer-icon" />
-              <span>contato@rochatech.com.br</span>
+              <span>rochatechsolutions86@gmail.com</span>
             </li>
           </ul>
 
@@ -50,7 +50,7 @@ const Footer = () => {
             <a href="https://linkedin.com/in/danielrocha92" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <FiLinkedin />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a href="https://instagram.com/rochatechsolutions" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <FiInstagram />
             </a>
           </div>
