@@ -1,8 +1,8 @@
 /* :root (Variáveis Globais da Marca) */
 :root {
-  /* 2. Tipografia */
-  --font-family-headings: 'Poppins', sans-serif;
-  --font-family-body: 'Roboto', sans-serif;
+  /* 2. Tipografia — alinhadas com as fontes carregadas no HTML */
+  --font-family-headings: 'Montserrat', 'Lato', sans-serif;
+  --font-family-body: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   /* 3. Pesos de Fonte */
   --font-weight-regular: 400;

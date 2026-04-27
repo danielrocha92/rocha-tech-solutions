@@ -96,6 +96,7 @@ const Portfolio: React.FC = () => {
                     loop
                     muted
                     playsInline
+                    preload="none"
                   >
                     Seu navegador não suporta este vídeo.
                   </video>
@@ -104,6 +105,8 @@ const Portfolio: React.FC = () => {
                     src={project.media.src}
                     alt={project.media.alt}
                     className="project-asset"
+                    loading="lazy"
+                    decoding="async"
                   />
                 )}
 

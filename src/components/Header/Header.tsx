@@ -19,7 +19,15 @@ const Header = () => {
       <div className="header-container">
         {/* Este link volta para o topo da página inicial */}
         <Link to="/#hero" className="logo" aria-label="Página Inicial">
-          <img src="/assets/img/logo.png" alt="Logo Rocha Tech Solutions" className="logo-img" />
+          <img
+            src="/assets/img/logo.png"
+            alt="Logo Rocha Tech Solutions"
+            className="logo-img"
+            fetchPriority="high"
+            loading="eager"
+            width="120"
+            height="40"
+          />
         </Link>
         <nav className={`nav ${isMenuOpen ? "open" : ""}`}>
           <ul className="nav-list" onClick={handleNavClick}>

@@ -4,39 +4,50 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+    <meta name="theme-color" content="#0d0d12" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/assets/img/logo.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <!-- ===================== -->
+    <!-- Preconnects (fontes)  -->
+    <!-- ===================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Fonte com display=swap para NÃO bloquear renderização -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet" />
+    </noscript>
+
+    <!-- ===================== -->
+    <!-- Preload de recursos LCP críticos -->
+    <!-- ===================== -->
+    <!-- Logo no header (acima da dobra, LCP candidate no mobile) -->
+    <link rel="preload" href="%PUBLIC_URL%/assets/img/logo.png" as="image" fetchpriority="high" />
+
+    <!-- ===================== -->
+    <!-- SEO / Meta Tags       -->
+    <!-- ===================== -->
     <title>RochaTechSolutions | Desenvolvedor Web em São Paulo</title>
-      <meta
-          name="description"
-          content="Portfólio de Daniel Rocha, desenvolvedor web especializado na criação de sites profissionais, e-commerce e aplicações web modernas em São Paulo."
-      />
-      <meta property="og:title" content="RochaTechSolutions | Desenvolvedor Web em São Paulo" />
-      <meta property="og:description" content="Portfólio de Daniel Rocha, desenvolvedor web especializado na criação de sites profissionais, e-commerce e aplicações web modernas em São Paulo." />
-      <meta property="og:image" content="%PUBLIC_URL%/assets/img/logo512.jpeg" />
-      <meta property="og:url" content="https://rochatechsolutions.vercel.app/" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta
-          name="keywords"
-          content="desenvolvedor web, programador, front-end, back-end, React, Node.js, e-commerce, SEO, São Paulo, Brasil"
-      />
+    <meta
+      name="description"
+      content="Portfólio de Daniel Rocha, desenvolvedor web especializado na criação de sites profissionais, e-commerce e aplicações web modernas em São Paulo."
+    />
+    <meta property="og:title" content="RochaTechSolutions | Desenvolvedor Web em São Paulo" />
+    <meta property="og:description" content="Portfólio de Daniel Rocha, desenvolvedor web especializado na criação de sites profissionais, e-commerce e aplicações web modernas em São Paulo." />
+    <meta property="og:image" content="%PUBLIC_URL%/assets/img/logo512.jpeg" />
+    <meta property="og:url" content="https://rocha-tech-solutions.vercel.app/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="keywords"
+      content="desenvolvedor web, programador, front-end, back-end, React, Node.js, e-commerce, SEO, São Paulo, Brasil"
+    />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
