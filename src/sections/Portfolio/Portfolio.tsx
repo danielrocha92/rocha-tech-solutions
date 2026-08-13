@@ -20,6 +20,19 @@ interface ProjectCard {
 // Dados Enriquecidos com base nos Repositórios do GitHub
 const portfolioProjects: ProjectCard[] = [
   {
+    title: 'Critel Tecnologia',
+    category: 'Infraestrutura de TI & Soluções Corporativas',
+    description: 'Portal institucional de alta performance para a Critel Tecnologia, especializado em infraestrutura de TI, Service Desk e segurança de redes, com arquitetura focada em geração qualificada de leads B2B.',
+    techStack: ['React.js', 'TypeScript', 'Node.js', 'CSS Modules'],
+    linkTo: '/portfolio/critel-tecnologia',
+    githubLink: 'https://github.com/danielrocha92/critel-tecnologia',
+    media: {
+      src: '/assets/img/critel-tecnologia.jpg',
+      alt: 'Projeto Critel Tecnologia',
+      type: 'image',
+    }
+  },
+  {
     title: 'Zero 20 Garage',
     category: 'Portal Institucional & Captação',
     description: 'Site institucional de alta performance para a oficina Zero20 Garage, desenvolvido com foco na captação inteligente de orçamentos e conversão de clientes automotivos.',

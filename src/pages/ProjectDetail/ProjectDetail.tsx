@@ -26,6 +26,20 @@ interface Project {
 // 2. Dados completos dos projetos com galeria
 const projects: Project[] = [ // Adiciona a tipagem à constante
   {
+    id: "critel-tecnologia",
+    title: "Critel Tecnologia",
+    githubLink: "https://github.com/danielrocha92/critel-tecnologia",
+    siteLink: "https://critel-tecnologia.vercel.app/",
+    role: "Desenvolvedor Full Stack, UI/UX Designer",
+    description: "Desenvolvimento do portal institucional corporativo para a Critel Tecnologia, empresa referência em soluções de infraestrutura de TI, Service Desk, cabeamento estruturado e cibersegurança. O projeto foi projetado com foco em alta performance, usabilidade B2B e conversão de leads estratégicos.",
+    highlights: "Layout corporativo de alto padrão com tema dark e detalhes em neon cyan, arquitetura moderna em React e TypeScript, formulários de contato com validação inteligente e catálogo interativo de soluções de TI.",
+    technologies: ["React.js", "TypeScript", "Node.js", "CSS Modules", "Vite"],
+    gallery: [
+      { src: "/assets/img/critel-tecnologia.jpg", alt: "Visão geral da página institucional da Critel Tecnologia." },
+      { src: "/assets/img/critel-1.jpg", alt: "Demonstração das soluções em TI da Critel Tecnologia." }
+    ]
+  },
+  {
     id: "zero-vinte",
     title: "Zero 20 Garage",
     githubLink: "https://github.com/danielrocha92/zero20garage",

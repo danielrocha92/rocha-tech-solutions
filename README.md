@@ -50,6 +50,12 @@
   </thead>
   <tbody>
     <tr>
+      <td><b>Critel Tecnologia</b></td>
+      <td>Desenvolvimento de <b>Portal Corporativo de TI & Service Desk</b> com arquitetura focada em autoridade técnica e captação de leads e contratos B2B.</td>
+      <td>React, TypeScript, Node.js, CSS Modules</td>
+      <td><a href="https://github.com/danielrocha92/critel-tecnologia">Ver Repositório</a></td>
+    </tr>
+    <tr>
       <td><b>Zero20 Garage</b></td>
       <td>Criação de <b>Portal Institucional com Painel Admin</b> para gestão e exportação de orçamentos (PDF/Excel), transformando o site em uma ferramenta de trabalho.</td>
       <td>React, Node.js, Express, Firebase</td>
