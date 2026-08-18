@@ -25,8 +25,6 @@ const Header = () => {
             className="logo-img"
             fetchPriority="high"
             loading="eager"
-            width="120"
-            height="40"
           />
         </Link>
         <nav className={`nav ${isMenuOpen ? "open" : ""}`}>

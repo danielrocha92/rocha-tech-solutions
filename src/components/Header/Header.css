@@ -7,10 +7,13 @@
   left: 0;
   width: 100%;
   background-color: var(--header-background);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color: var(--text-primary);
   z-index: 1000;
-  box-shadow: 0 2px 5px var(--shadow-primary);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+  transition: all 0.3s ease;
 }
 
 .header-container {
@@ -22,7 +25,15 @@
 }
 
 .logo-img {
-  height: 60px;
+  height: auto;
+  max-height: 55px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.02);
 }
 
 .header-actions {
@@ -138,12 +149,11 @@
 /* ======================== */
 @media (min-width: 768px) {
   .header-container {
-    display: grid;
-    grid-template-columns: auto 1fr auto; /* Logo, Nav, Actions */
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    /* Reduzido o padding para o desktop */
-    padding: 0.3rem 0.7rem;
-    max-width: 1200px;
+    padding: 0.5rem 2rem;
+    max-width: 1280px;
     margin: 0 auto;
   }
 
@@ -156,42 +166,61 @@
     padding-top: 0;
     transform: none;
     z-index: auto;
-    grid-column: 2 / 3; /* Ocupa a segunda coluna */
+    flex: 1;
+    display: flex;
+    justify-content: center;
   }
 
   .nav-list {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
   }
 
   .nav-item a {
-    font-size: 1rem;
-    /* Adicionado padding para desktop */
-    padding: 0.3rem 0.6rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    color: var(--text-primary);
+    position: relative;
+    background-color: transparent;
+    transition: color 0.3s ease;
   }
 
   .nav-item a:hover {
     color: var(--brand-primary);
-    background-color: var(--background-tertiary);
-    border-radius: 8px;
+    background-color: transparent;
+    border-radius: 0;
+  }
+
+  /* Efeito sublinhado moderno */
+  .nav-item a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--brand-primary);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .nav-item a:hover::after {
+    width: 100%;
   }
 
   .header-actions {
-    grid-column: 3 / 4; /* Ocupa a terceira coluna */
-    justify-content: flex-end; /* Alinha os itens à direita */
+    justify-content: flex-end;
   }
 
   .menu-toggle {
-    display: none; /* Esconde o menu-toggle no desktop */
-  }
-
-  .logo {
-    grid-column: 1 / 2;
+    display: none;
   }
 
   .logo-img {
-    height: 50px;
+    max-height: 50px;
   }
 }
