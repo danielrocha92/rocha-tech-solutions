@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Importa o CSS do carrossel
 import './ProjectDetail.css';
@@ -108,20 +109,22 @@ const ProjectDetail: React.FC = () => { // Tipagem do componente
   const { id } = useParams<{ id: string }>(); // Tipagem do useParams
   const project = projects.find(p => p.id === id);
 
-  useEffect(() => {
-    if (project) {
-      // Define o título da página dinamicamente para SEO
-      document.title = `${project.title} - Projeto de Daniel Rocha`;
-    }
-  }, [project]);
-
   if (!project) {
     return <div>Projeto não encontrado!</div>;
   }
 
   return (
-    <section className="project-detail">
-      <div className="project-detail-container">
+    <>
+      <Helmet>
+        <title>{`${project.title} - Projeto | RochaTechSolutions`}</title>
+        <meta name="description" content={project.description.substring(0, 160) + '...'} />
+        <meta property="og:title" content={`${project.title} - Projeto | RochaTechSolutions`} />
+        <meta property="og:description" content={project.description.substring(0, 160) + '...'} />
+        {project.gallery.length > 0 && <meta property="og:image" content={`https://rocha-tech-solutions.vercel.app${project.gallery[0].src}`} />}
+        <meta property="og:url" content={`https://rocha-tech-solutions.vercel.app/portfolio/${project.id}`} />
+      </Helmet>
+      <section className="project-detail">
+        <div className="project-detail-container">
 
         {/* Novo Carrossel de Imagens no Topo */}
         {project.gallery && project.gallery.length > 0 && (
@@ -186,6 +189,7 @@ const ProjectDetail: React.FC = () => { // Tipagem do componente
         </ul>
       </div>
     </section>
+    </>
   );
 };
 

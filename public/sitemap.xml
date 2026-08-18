@@ -4,19 +4,63 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Gemini -->
 
+<!-- Páginas Principais -->
 <url>
-  <loc>https://www.rochatechsolutions.com/</loc>
-  <lastmod>2025-10-17T15:00:00+00:00</lastmod>
+  <loc>https://rocha-tech-solutions.vercel.app/</loc>
+  <lastmod>2026-08-18T12:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>1.0</priority>
 </url>
 <url>
-  <loc>https://www.rochatechsolutions.com/projects</loc>
-  <lastmod>2025-10-17T15:00:00+00:00</lastmod>
+  <loc>https://rocha-tech-solutions.vercel.app/about</loc>
+  <lastmod>2026-08-18T12:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://rocha-tech-solutions.vercel.app/portfolio</loc>
+  <lastmod>2026-08-18T12:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+</url>
+<url>
+  <loc>https://rocha-tech-solutions.vercel.app/contact</loc>
+  <lastmod>2026-08-18T12:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<!-- Páginas de Projetos (Dinâmicas) -->
+<url>
+  <loc>https://rocha-tech-solutions.vercel.app/portfolio/critel-tecnologia</loc>
+  <lastmod>2026-08-18T12:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://rocha-tech-solutions.vercel.app/portfolio/zero-vinte</loc>
+  <lastmod>2026-08-18T12:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://rocha-tech-solutions.vercel.app/portfolio/bem-amados</loc>
+  <lastmod>2026-08-18T12:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://rocha-tech-solutions.vercel.app/portfolio/renata-ribeiro</loc>
+  <lastmod>2026-08-18T12:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://rocha-tech-solutions.vercel.app/portfolio/mao-de-cera</loc>
+  <lastmod>2026-08-18T12:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
 </url>
 
 </urlset>

@@ -4,7 +4,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/About/AboutPage";
-import Portfolio from "./sections/Portfolio/Portfolio";
+import PortfolioPage from "./pages/PortfolioPage";
 import ProjectDetail from "./pages/ProjectDetail/ProjectDetail";
 import ContactPage from "./pages/Contact/ContactPage"; // Importação da nova página de Contato
 
@@ -27,7 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
           <Route path="/portfolio/:id" element={<ProjectDetail />} />
           <Route path="/contact" element={<ContactPage />} /> {/* Adicionado rota para /contact */}
         </Routes>
