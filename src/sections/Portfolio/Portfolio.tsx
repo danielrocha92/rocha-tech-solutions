@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { FiExternalLink, FiGithub, FiLayers, FiEye, FiArrowUp, FiArrowDown } from 'react-icons/fi';
 import "./Portfolio.css";
 
@@ -11,17 +10,16 @@ interface ProjectCard {
   categoryFilter: 'institucional' | 'sistemas' | 'ecommerce';
   description: string;
   techStack: string[];
-  linkTo: string;
-  isInternal?: boolean;
+  liveUrl: string;
+  displayUrl: string;
   githubLink?: string;
   media: {
     src: string;
     alt: string;
-    type?: 'image' | 'video';
   };
 }
 
-// Dados Enriquecidos dos Projetos
+// Dados Atualizados com as Páginas Reais dos Projetos
 const portfolioProjects: ProjectCard[] = [
   {
     id: 'critel-tecnologia',
@@ -30,13 +28,12 @@ const portfolioProjects: ProjectCard[] = [
     categoryFilter: 'institucional',
     description: 'Portal institucional de alta performance para a Critel Tecnologia, especializado em infraestrutura de TI, Service Desk e segurança de redes, com arquitetura focada em geração qualificada de leads B2B.',
     techStack: ['React.js', 'TypeScript', 'Node.js', 'CSS Modules'],
-    linkTo: '/portfolio/critel-tecnologia',
-    isInternal: true,
+    liveUrl: 'https://critel-tecnologia.vercel.app/pt',
+    displayUrl: 'critel-tecnologia.vercel.app/pt',
     githubLink: 'https://github.com/danielrocha92/critel-tecnologia',
     media: {
-      src: '/assets/img/critel-tecnologia.jpg',
-      alt: 'Projeto Critel Tecnologia',
-      type: 'image',
+      src: '/assets/img/showcase-critel-tecnologia.png',
+      alt: 'Página real da Critel Tecnologia',
     }
   },
   {
@@ -46,12 +43,12 @@ const portfolioProjects: ProjectCard[] = [
     categoryFilter: 'institucional',
     description: 'Site institucional de alta performance para a oficina Zero20 Garage, desenvolvido com foco na captação inteligente de orçamentos e conversão de clientes automotivos.',
     techStack: ['React.js', 'Firebase', 'Framer Motion', 'Node.js'],
-    linkTo: 'https://zero20garage.vercel.app',
+    liveUrl: 'https://zero20garage.com.br/',
+    displayUrl: 'zero20garage.com.br',
     githubLink: 'https://github.com/danielrocha92/zero20garage',
     media: {
-      src: '/assets/img/zero20garage.jpeg',
-      alt: 'Projeto Zero 20 Garage',
-      type: 'image',
+      src: '/assets/img/showcase-zero20garage.png',
+      alt: 'Página real da Zero 20 Garage',
     }
   },
   {
@@ -59,14 +56,14 @@ const portfolioProjects: ProjectCard[] = [
     title: 'Mão de Cera Oficial',
     category: 'Portal de Serviços e Leads',
     categoryFilter: 'institucional',
-    description: 'Plataforma full-stack para modernizar a marca no ambiente digital. Implementação de formulários, gestão de banco de dados e UX dedicada à conversão de serviços estéticos.',
+    description: 'Plataforma full-stack para modernizar a marca no ambiente digital. Implementação de catálogo de produtos artesanais, formulários e UX dedicada à conversão.',
     techStack: ['Next.js', 'Firebase Auth', 'CSS Modules'],
-    linkTo: 'https://mao-de-cera-oficial.vercel.app',
+    liveUrl: 'https://mao-de-cera-oficial.vercel.app/',
+    displayUrl: 'mao-de-cera-oficial.vercel.app',
     githubLink: 'https://github.com/danielrocha92/mao-de-cera-oficial',
     media: {
-      src: '/assets/videos/mao-de-cera-oficial.mp4',
-      alt: 'Projeto Mão de Cera Oficial',
-      type: 'video',
+      src: '/assets/img/showcase-mao-de-cera-oficial.png',
+      alt: 'Página real da Mão de Cera Oficial',
     }
   },
   {
@@ -74,14 +71,14 @@ const portfolioProjects: ProjectCard[] = [
     title: 'Renata Ribeiro Neuropsico',
     category: 'Sistema de Gestão & Pacientes',
     categoryFilter: 'sistemas',
-    description: 'Aplicação robusta para neuropsicologia integrando Dashboard Administrativo e Área do Cliente para gerenciamento, documentos e agendamentos de forma segura e responsiva.',
+    description: 'Aplicação robusta para neuropsicologia integrando apresentação clínica, agendamentos, serviços terapêuticos e Área do Paciente de forma segura e responsiva.',
     techStack: ['Next.js', 'React.js', 'CSS Dedicado'],
-    linkTo: 'https://renata-ribeiro-neuropsico.vercel.app',
+    liveUrl: 'https://renata-ribeiro-neuropsico.vercel.app/',
+    displayUrl: 'renata-ribeiro-neuropsico.vercel.app',
     githubLink: 'https://github.com/danielrocha92/renata-ribeiro-neuropsico',
     media: {
-      src: '/assets/videos/screemshot_solo_psico.mp4',
-      alt: 'Projeto Renata Ribeiro',
-      type: 'video',
+      src: '/assets/img/showcase-renata-ribeiro-neuropsico.png',
+      alt: 'Página real da Renata Ribeiro Neuropsicologia',
     }
   },
   {
@@ -89,14 +86,13 @@ const portfolioProjects: ProjectCard[] = [
     title: 'Bem Amados',
     category: 'E-commerce & SEO',
     categoryFilter: 'ecommerce',
-    description: 'E-commerce de impacto para a marca médica Bem Amados, orquestrando otimização profunda de SEO e arquitetura de fácil conversão de vendas em ambiente digital.',
+    description: 'E-commerce de impacto para a marca de fisioterapia pélvica e bem-estar Bem Amados, com catálogo completo de produtos, otimização profunda de SEO e arquitetura de alta conversão.',
     techStack: ['Liquid.js', 'JavaScript', 'HTML5', 'JSON'],
-    linkTo: '/portfolio/bem-amados',
-    isInternal: true,
+    liveUrl: 'https://www.bemamados.com.br/',
+    displayUrl: 'bemamados.com.br',
     media: {
-      src: '/assets/img/bemamados.jpeg',
-      alt: 'Projeto Bem Amados',
-      type: 'image',
+      src: '/assets/img/showcase-bemamados.png',
+      alt: 'Página real do E-commerce Bem Amados',
     }
   }
 ];
@@ -169,51 +165,44 @@ const Portfolio: React.FC = () => {
                       <span className="dot dot-yellow" />
                       <span className="dot dot-green" />
                     </div>
-                    <div className="browser-url-bar">
-                      <span className="browser-url-text">
-                        {project.linkTo.replace(/^https?:\/\//, '')}
-                      </span>
-                    </div>
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="browser-url-bar"
+                      title={`Acessar ${project.liveUrl}`}
+                    >
+                      <span className="browser-url-text">{project.displayUrl}</span>
+                    </a>
                   </div>
 
-                  <div className="portfolio-media">
-                    {project.media.type?.toLowerCase() === 'video' ? (
-                      <video
-                        src={project.media.src}
-                        title={project.media.alt}
-                        className="project-asset-video"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="none"
-                      >
-                        Seu navegador não suporta este vídeo.
-                      </video>
-                    ) : (
-                      <img
-                        src={project.media.src}
-                        alt={project.media.alt}
-                        className="project-asset-img"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    )}
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="portfolio-media"
+                    title={`Clique para abrir ${project.title}`}
+                  >
+                    <img
+                      src={project.media.src}
+                      alt={project.media.alt}
+                      className="project-asset-img"
+                      loading="lazy"
+                      decoding="async"
+                    />
 
-                    {/* Indicador de Rolagem Interativo (Estilo mmorais.net) */}
-                    {project.media.type !== 'video' && (
-                      <div className="scroll-indicator" title="Passe o mouse ou toque para rolar a página">
-                        <div className="scroll-indicator-inner">
-                          <FiArrowUp className="scroll-arrow scroll-arrow-up" />
-                          <div className="scroll-icon-center">
-                            <FiEye className="scroll-main-icon" />
-                          </div>
-                          <FiArrowDown className="scroll-arrow scroll-arrow-down" />
+                    {/* Indicador de Rolagem Interativo */}
+                    <div className="scroll-indicator" title="Passe o mouse ou toque para rolar a página">
+                      <div className="scroll-indicator-inner">
+                        <FiArrowUp className="scroll-arrow scroll-arrow-up" />
+                        <div className="scroll-icon-center">
+                          <FiEye className="scroll-main-icon" />
                         </div>
-                        <span className="scroll-hint-text">Rolar página</span>
+                        <FiArrowDown className="scroll-arrow scroll-arrow-down" />
                       </div>
-                    )}
-                  </div>
+                      <span className="scroll-hint-text">Rolar página</span>
+                    </div>
+                  </a>
                 </div>
 
                 {/* Informações do Projeto */}
@@ -232,20 +221,14 @@ const Portfolio: React.FC = () => {
 
                   {/* Ações e Links */}
                   <div className="portfolio-actions">
-                    {project.isInternal ? (
-                      <Link to={project.linkTo} className="action-btn primary-btn">
-                        Ver projeto <FiExternalLink className="btn-icon" />
-                      </Link>
-                    ) : (
-                      <a
-                        href={project.linkTo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="action-btn primary-btn"
-                      >
-                        Ver projeto <FiExternalLink className="btn-icon" />
-                      </a>
-                    )}
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="action-btn primary-btn"
+                    >
+                      Ver site ao vivo <FiExternalLink className="btn-icon" />
+                    </a>
 
                     {project.githubLink && (
                       <a

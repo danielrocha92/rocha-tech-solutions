@@ -30,13 +30,14 @@ const projects: Project[] = [ // Adiciona a tipagem à constante
     id: "critel-tecnologia",
     title: "Critel Tecnologia",
     githubLink: "https://github.com/danielrocha92/critel-tecnologia",
-    siteLink: "https://critel-tecnologia.vercel.app/",
+    siteLink: "https://critel-tecnologia.vercel.app/pt",
     role: "Desenvolvedor Full Stack, UI/UX Designer",
     description: "Desenvolvimento do portal institucional corporativo para a Critel Tecnologia, empresa referência em soluções de infraestrutura de TI, Service Desk, cabeamento estruturado e cibersegurança. O projeto foi projetado com foco em alta performance, usabilidade B2B e conversão de leads estratégicos.",
     highlights: "Layout corporativo de alto padrão com tema dark e detalhes em neon cyan, arquitetura moderna em React e TypeScript, formulários de contato com validação inteligente e catálogo interativo de soluções de TI.",
     technologies: ["React.js", "TypeScript", "Node.js", "CSS Modules", "Vite"],
     gallery: [
-      { src: "/assets/img/critel-tecnologia.jpg", alt: "Visão geral da página institucional da Critel Tecnologia." },
+      { src: "/assets/img/showcase-critel-tecnologia.png", alt: "Visão geral completa da página institucional da Critel Tecnologia." },
+      { src: "/assets/img/critel-tecnologia.jpg", alt: "Design conceitual das soluções em TI da Critel Tecnologia." },
       { src: "/assets/img/critel-1.jpg", alt: "Demonstração das soluções em TI da Critel Tecnologia." }
     ]
   },
@@ -44,15 +45,16 @@ const projects: Project[] = [ // Adiciona a tipagem à constante
     id: "zero-vinte",
     title: "Zero 20 Garage",
     githubLink: "https://github.com/danielrocha92/zero20garage",
-    siteLink: "https://zero20garage.vercel.app/",
+    siteLink: "https://zero20garage.com.br/",
     role: "Desenvolvedor Full Stack, Designer",
     description: "Desenvolvimento de um site institucional moderno e responsivo para a Zero20 Garage, especializada em preparação, manutenção e retífica de motores. O projeto visou criar uma plataforma digital para apresentar os serviços, fortalecer a presença online e facilitar o contato com clientes.",
     highlights: "Design intuitivo e visual alinhado à identidade da marca, totalmente responsivo para mobile e desktop, galeria de imagens para exibição dos projetos da oficina e formulário de contato para conversão de clientes.",
     technologies: ["React.js", "CSS", "Framer Motion", "Vite"],
     gallery: [
+      { src: "/assets/img/showcase-zero20garage.png", alt: "Captura de tela completa do site Zero 20 Garage." },
       { src: "/assets/img/zero20-1.png", alt: "Captura de tela da página inicial do site Zero 20 Garage." },
       { src: "/assets/img/zero20-2.png", alt: "Captura de tela da página de orçamentos do site Zero 20 Garage." },
-      { src: "/assets/img/zero20-3.png", alt: "Captura de tela da págian do blog do site Zero 20 Garage." }
+      { src: "/assets/img/zero20-3.png", alt: "Captura de tela da página do blog do site Zero 20 Garage." }
     ]
   },
   {
@@ -65,6 +67,7 @@ const projects: Project[] = [ // Adiciona a tipagem à constante
     highlights: "Catálogo de produtos personalizados, integração com sistema de pagamento, layout otimizado para SEO, blog integrado para estratégias de conteúdo e formulário de contato e links para redes sociais.",
     technologies: ["Liquid.js", "HTML", "CSS", "JSON", "JavaScript"],
     gallery: [
+      { src: "/assets/img/showcase-bemamados.png", alt: "Captura de tela completa do e-commerce Bem Amados." },
       { src: "/assets/img/bemamados-1.png", alt: "Captura de tela da página inicial do site Bem Amados." },
       { src: "/assets/img/bemamados-2.png", alt: "Captura de tela da página de produtos do site Bem Amados." },
       { src: "/assets/img/bemamados-3.png", alt: "Captura de tela da página de sugestão de produtos do site Bem Amados." }
@@ -80,10 +83,8 @@ const projects: Project[] = [ // Adiciona a tipagem à constante
     highlights: "Design limpo e profissional, totalmente responsivo, informações detalhadas sobre os serviços oferecidos, e formulário de contato para agendamentos.",
     technologies: ["React.js", "CSS", "Vite"],
     gallery: [
-      { src: "/assets/videos/screemshot_solo_psico.mp4", alt: "Vídeo de demonstração do site Renata Ribeiro.", type: "video" },
-      { src: "/assets/img/renata-ribeiro-1.png", alt: "Captura de tela da página inicial do site Renata Ribeiro." },
-      { src: "/assets/img/renata-ribeiro-2.png", alt: "Captura de tela da página de serviços do site Renata Ribeiro." },
-      { src: "/assets/img/renata-ribeiro-3.png", alt: "Captura de tela da página de contato do site Renata Ribeiro." }
+      { src: "/assets/img/showcase-renata-ribeiro-neuropsico.png", alt: "Captura de tela completa do site Renata Ribeiro Neuropsicologia." },
+      { src: "/assets/videos/screemshot_solo_psico.mp4", alt: "Vídeo de demonstração do site Renata Ribeiro.", type: "video" }
     ]
   },
   {
@@ -96,11 +97,10 @@ const projects: Project[] = [ // Adiciona a tipagem à constante
     highlights: "Design moderno e responsivo, galeria de produtos, informações detalhadas sobre a marca e formulário de contato.",
     technologies: ["React.js", "Next.js", "CSS"],
     gallery: [
+      { src: "/assets/img/showcase-mao-de-cera-oficial.png", alt: "Captura de tela completa do site Mão de Cera Oficial." },
+      { src: "/assets/videos/mao-de-cera-oficial.mp4", alt: "Vídeo de apresentação do site Mão de Cera Oficial.", type: "video" },
       { src: "/assets/img/mao-de-cera-oficial/Captura de tela 2025-11-17 020351.png", alt: "Captura de tela do site Mão de Cera Oficial." },
-      { src: "/assets/img/mao-de-cera-oficial/Captura de tela 2025-11-17 020407.png", alt: "Captura de tela do site Mão de Cera Oficial." },
-      { src: "/assets/img/mao-de-cera-oficial/Captura de tela 2025-11-17 020427.png", alt: "Captura de tela do site Mão de Cera Oficial." },
-      { src: "/assets/img/mao-de-cera-oficial/Captura de tela 2025-11-17 020435.png", alt: "Captura de tela do site Mão de Cera Oficial." },
-      { src: "/assets/img/mao-de-cera-oficial/Captura de tela 2025-11-17 020445.png", alt: "Captura de tela do site Mão de Cera Oficial." }
+      { src: "/assets/img/mao-de-cera-oficial/Captura de tela 2025-11-17 020407.png", alt: "Captura de tela do site Mão de Cera Oficial." }
     ]
   },
 ];
