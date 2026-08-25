@@ -6,13 +6,15 @@ const useScrollToHash = (headerHeight) => {
 
   useEffect(() => {
     if (location.hash) {
-      const element = document.getElementById(location.hash.substring(1));
-      if (element) {
-        window.scrollTo({
-          top: element.offsetTop - headerHeight,
-          behavior: 'smooth'
-        });
-      }
+      setTimeout(() => {
+        const element = document.getElementById(location.hash.substring(1));
+        if (element) {
+          window.scrollTo({
+            top: element.offsetTop - headerHeight,
+            behavior: 'smooth'
+          });
+        }
+      }, 100); // Pequeno atraso para garantir que o DOM esteja pronto
     }
   }, [location, headerHeight]);
 };

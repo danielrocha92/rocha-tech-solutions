@@ -13,8 +13,10 @@ import './styles/theme.css';
 import { setupThemeSwitcher } from './scripts/theme-switcher';
 import ScrollButtons from "./components/ScrollButtons/ScrollButtons";
 import ScrollToTop from './hooks/ScrollToTop';
+import useScrollToHash from './hooks/useScrollToHash';
 
 function App() {
+  useScrollToHash(80); // Ajusta a rolagem para hashes, com a altura do header de 80px
   useEffect(() => {
     setupThemeSwitcher();
   }, []);

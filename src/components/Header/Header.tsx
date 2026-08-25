@@ -31,13 +31,13 @@ const Header = () => {
           <ul className="nav-list" onClick={handleNavClick}>
             {/* Links de âncora (mesma página) usam <a> */}
             <li className="nav-item">
-              <a href="/#hero">Início</a>
+              <Link to="/#hero">Início</Link>
             </li>
             <li className="nav-item">
               <Link to="/about">Nossa Metodologia</Link>
             </li>
             <li className="nav-item">
-              <a href="/#HowItWorks">Como Funciona</a>
+              <Link to="/#HowItWorks">Como Funciona</Link>
             </li>
 
             {/* Link para outra página/rota usa <Link> */}

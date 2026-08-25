@@ -4,13 +4,15 @@ import { useLocation } from 'react-router-dom';
 const ScrollToTop = () => {
   // O hook `useLocation` nos dá acesso ao objeto de localização,
   // que contém informações sobre a URL atual.
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
-  // O `useEffect` é executado toda vez que `pathname` muda.
+  // O `useEffect` é executado toda vez que `pathname` ou `hash` mudam.
   useEffect(() => {
-    // Rola a janela para o topo da página, nas coordenadas (0, 0).
-    window.scrollTo(0, 0);
-  }, [pathname]); // A dependência `pathname` garante que o efeito
+    // Rola para o topo apenas se não houver um hash na URL
+    if (!hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]); // As dependências garantem que o efeito
                   // seja executado em cada navegação.
 
   return null;
