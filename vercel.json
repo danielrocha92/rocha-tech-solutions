@@ -10,7 +10,7 @@
       ]
     },
     {
-      "source": "/assets/(.*\\.(png|jpg|jpeg|gif|webp|svg|ico|woff|woff2|ttf|eot))",
+      "source": "/assets/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -19,16 +19,7 @@
       ]
     },
     {
-      "source": "/assets/(.*\\.(mp4|webm|ogv))",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=86400, stale-while-revalidate=604800"
-        }
-      ]
-    },
-    {
-      "source": "/(.*\\.(js|css|map))",
+      "source": "/(.*)\\.(js|css|map|png|jpg|jpeg|gif|webp|svg|ico|woff|woff2|ttf|eot|mp4|webm|ogv)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -46,7 +37,7 @@
       ]
     },
     {
-      "source": "/(.*\\.html)",
+      "source": "/(.*)\\.html",
       "headers": [
         {
           "key": "Cache-Control",
